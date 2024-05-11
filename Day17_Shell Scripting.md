@@ -1,7 +1,7 @@
 ﻿---
 title: Day17_Shell Scripting
 uuid: 3aa3bd3e-0f67-11ef-af7b-a6f126245c9e
-version: 152
+version: 154
 created: '2024-05-11T12:52:30+05:30'
 tags:
   - shell
@@ -405,9 +405,7 @@ sh 18.greeting.sh -n satya -w "good evening"
 
  
 
-*Access Key*
-
-*Secret Key* 
+\
 
  
 
