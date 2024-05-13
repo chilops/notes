@@ -1,5 +1,5 @@
 ﻿---
-title: Day12_Shell Scripting
+title: 12Day_Shell Scripting
 uuid: 2451ac9e-0f53-11ef-af7b-a6f126245c9e
 version: 110
 created: '2024-05-11T10:28:43+05:30'

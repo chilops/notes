@@ -1,5 +1,5 @@
 ﻿---
-title: Day05_Linux
+title: 5Day_Linux
 uuid: f669d486-0e86-11ef-bfd1-2e40d90dfe07
 version: 219
 created: '2024-05-10T10:07:08+05:30'

@@ -1,5 +1,5 @@
 ﻿---
-title: Day13_shell Scripting
+title: 13Day_shell Scripting
 uuid: ab5d61fa-0f54-11ef-9e6a-2e40d90dfe07
 version: 70
 created: '2024-05-11T10:39:39+05:30'

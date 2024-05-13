@@ -1,5 +1,5 @@
 ﻿---
-title: Day18_Ansible
+title: 18Day_Ansible
 uuid: 5c1aa2aa-0f69-11ef-9e6a-2e40d90dfe07
 version: 135
 created: '2024-05-11T13:07:45+05:30'

@@ -1,5 +1,5 @@
 ﻿---
-title: Day02_Linux
+title: 2Day_Linux
 uuid: 568a17ea-0a27-11ef-a586-5658f55e0c13
 version: 209
 created: '2024-05-04T20:32:34+05:30'

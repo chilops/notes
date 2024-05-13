@@ -1,5 +1,5 @@
 ﻿---
-title: Day22&23_Ansible
+title: 22&23Day_Ansible
 uuid: 2f97211e-0b62-11ef-9fa6-5658f55e0c13
 version: 530
 created: '2024-05-06T10:06:20+05:30'

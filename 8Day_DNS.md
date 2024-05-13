@@ -1,5 +1,5 @@
 ﻿---
-title: Day08_DNS
+title: 8Day_DNS
 uuid: c912cef4-0e93-11ef-bf19-a6f126245c9e
 version: 51
 created: '2024-05-10T11:38:55+05:30'

@@ -1,5 +1,5 @@
 ﻿---
-title: Day09&10_Full_Manual_Installation_project
+title: 9&10Day_Full_Manual_Installation_project
 uuid: 98b39b84-0e94-11ef-841c-a6f126245c9e
 version: 764
 created: '2024-05-10T11:44:44+05:30'

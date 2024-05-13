@@ -1,5 +1,5 @@
 ﻿---
-title: Day04_Linux
+title: 4Day_Linux
 uuid: 956743c8-0e84-11ef-9be8-a6f126245c9e
 version: 214
 created: '2024-05-10T09:50:06+05:30'

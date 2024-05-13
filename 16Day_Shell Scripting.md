@@ -1,5 +1,5 @@
 ﻿---
-title: Day16_Shell Scripting
+title: 16Day_Shell Scripting
 uuid: 8d658766-0f65-11ef-af7b-a6f126245c9e
 version: 160
 created: '2024-05-11T12:40:30+05:30'

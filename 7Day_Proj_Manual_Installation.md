@@ -1,5 +1,5 @@
 ﻿---
-title: Day07_Proj_Manual_Installation
+title: 7Day_Proj_Manual_Installation
 uuid: 8381b170-0e8e-11ef-9be8-a6f126245c9e
 version: 401
 created: '2024-05-10T11:01:11+05:30'

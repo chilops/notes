@@ -1,5 +1,5 @@
 ﻿---
-title: Day17_Shell Scripting
+title: 17Day_Shell Scripting
 uuid: 3aa3bd3e-0f67-11ef-af7b-a6f126245c9e
 version: 154
 created: '2024-05-11T12:52:30+05:30'

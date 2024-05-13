@@ -1,5 +1,5 @@
 ﻿---
-title: Day14_Shell Scripting
+title: 14Day_Shell Scripting
 uuid: f0a73d34-0f55-11ef-af7b-a6f126245c9e
 version: 138
 created: '2024-05-11T10:48:45+05:30'

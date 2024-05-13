@@ -1,5 +1,5 @@
 ﻿---
-title: Day24_Ansible
+title: 24Day_Ansible
 uuid: 1f222abc-0cf8-11ef-9bc9-2e40d90dfe07
 version: 542
 created: '2024-05-08T10:32:07+05:30'

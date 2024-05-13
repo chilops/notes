@@ -1,5 +1,5 @@
 ﻿---
-title: Day3_Linux
+title: 3Day_Linux
 uuid: 2a20131c-0e82-11ef-9be8-a6f126245c9e
 version: 216
 created: '2024-05-10T09:32:47+05:30'

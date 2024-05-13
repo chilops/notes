@@ -1,5 +1,5 @@
 ﻿---
-title: Day06_Proj_Discussion
+title: 6Day_Proj_Discussion
 uuid: e78beeda-0e8c-11ef-9be8-a6f126245c9e
 version: 123
 created: '2024-05-10T10:49:40+05:30'

@@ -1,5 +1,5 @@
 ﻿---
-title: Day19_Ansible
+title: 19Day_Ansible
 uuid: 093c26a8-0f6e-11ef-b475-a6f126245c9e
 version: 248
 created: '2024-05-11T13:41:14+05:30'
