@@ -1,7 +1,7 @@
 ﻿---
 title: 25Day_Terraform
 uuid: 0cc27282-10e5-11ef-8a05-2e40d90dfe07
-version: 725
+version: 949
 created: '2024-05-13T10:25:41+05:30'
 tags:
   - terraform
@@ -16,6 +16,10 @@ tags:
 1. *<mark style="background-color:#f8d616;">Terraform setup along with AWS CLI<!-- {"backgroundCycleColor":"25"} --></mark>*
 
 1. *<mark style="background-color:#f8d616;">Let us create one EC2 instance using terraform<!-- {"backgroundCycleColor":"25"} --></mark>*
+
+1. *<mark style="background-color:#f8d616;">Variables in Terraform<!-- {"backgroundCycleColor":"25"} --></mark>*
+
+1. <mark style="background-color:#f8914d;">.gitignore file<!-- {"backgroundCycleColor":"24"} --></mark>  
 
 \
 
@@ -62,6 +66,8 @@ tags:
 *<mark style="background-color:#f3de6c;">**Terraform purpose**<!-- {"backgroundCycleColor":"14"} --></mark>*
 
 - *It's a Inventory management*
+
+- *Terraform is intelligent, It can do dependency management.*
 
 - *cost optimization --  Create when required, stop or delete when not required*
 
@@ -286,9 +292,9 @@ provider "aws" {
 
 \
 
-*Now we need to create one user in AWS -IAM*
-
 \
+
+*Now we need to create one user in AWS -IAM*
 
 ![c8575e1b-272f-40c8-b585-6f6ad830d492.png|837.3333740234375](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/c8575e1b-272f-40c8-b585-6f6ad830d492.png) [^24]
 
@@ -446,7 +452,143 @@ Instance destroyed now
 
 \
 
-1\.00
+\
+
+*<mark style="background-color:#f8d616;">Variables in Terraform:<!-- {"backgroundCycleColor":"25"} --></mark>*
+
+\
+
+*variable "name-of-your-variable" {*
+
+      *type = data-type*
+
+      *default = "default-value"    #we can always override*
+
+*}*
+
+\
+
+\
+
+*Creating security group and an instance associated security group.*
+
+![3999d454-1b4f-47f6-b702-93f0baa6dc08.png|977](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/3999d454-1b4f-47f6-b702-93f0baa6dc08.png) [^46]
+
+\
+
+```
+terraform plan
+```
+
+```
+terraform apply
+```
+
+![659aa14d-fd8e-4f79-8af3-a8e3026d4f1f.png|700](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/659aa14d-fd8e-4f79-8af3-a8e3026d4f1f.png) [^47]
+
+\
+
+![99e0a0e2-a6b6-4b51-86a2-f51337ba9f46.png|799.3333740234375](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/99e0a0e2-a6b6-4b51-86a2-f51337ba9f46.png) [^48]
+
+![1888bd28-19d6-48b4-ba6a-e0e0ddb992bc.png|798.3333740234375](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/1888bd28-19d6-48b4-ba6a-e0e0ddb992bc.png) [^49]
+
+\
+
+```
+terraform destroy
+```
+
+or
+
+```
+terraform destroy -auto-approve
+```
+
+![383e645b-3298-4e69-a55c-21ddf203beab.png|857.3333740234375](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/383e645b-3298-4e69-a55c-21ddf203beab.png) [^50]
+
+\
+
+\
+
+\
+
+**string** -- names ex: group, satya, aws
+
+**Number** -- 0, 123, 00.22 
+
+**Boolean** -- true or false
+
+**List** -- As below example
+
+![dd935b0c-fe7f-4266-8c4c-9754e258e3cb.png|159](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/dd935b0c-fe7f-4266-8c4c-9754e258e3cb.png) [^51]
+
+\
+
+**Map**  -- example starts with {flower braces as below}
+
+![ac544f4d-260d-4df7-a3b7-c7cf65d1df7e.png|627](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/ac544f4d-260d-4df7-a3b7-c7cf65d1df7e.png) [^52]
+
+**Using variables.tf code**
+
+![d8625c04-f5d4-4d2c-96d2-3330a452df56.png|866](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/d8625c04-f5d4-4d2c-96d2-3330a452df56.png) [^53]
+
+\
+
+Updated EC2 & security code with variables
+
+![171f3365-b16a-4bbd-8d14-1c9218e8b385.png|993.3333740234375](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/171f3365-b16a-4bbd-8d14-1c9218e8b385.png) [^54]
+
+\
+
+```
+terraform plan
+```
+
+```
+terraform apply -auto-approve
+```
+
+or
+
+```
+terraform apply
+```
+
+![d8ae9fe7-3b8b-4ecd-80f7-03815bbf3d04.png|1010.3333740234375](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/d8ae9fe7-3b8b-4ecd-80f7-03815bbf3d04.png) [^55]
+
+![75d22b9b-982e-4432-b229-c325f54f0323.png|1003.3333740234375](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/75d22b9b-982e-4432-b229-c325f54f0323.png) [^56]
+
+\
+
+```
+terraform destroy -auto-approve
+```
+
+![73c69d42-38ff-479c-9fde-ebaacdd33a1b.png|1007.3333740234375](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/73c69d42-38ff-479c-9fde-ebaacdd33a1b.png) [^57]
+
+![da64aa64-c480-4be4-9ae7-a7463d57bd21.png|785](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/da64aa64-c480-4be4-9ae7-a7463d57bd21.png) [^58]
+
+\
+
+\
+
+<mark style="background-color:#f8914d;">.gitignore file<!-- {"backgroundCycleColor":"24"} --></mark>  -- it will ignore .tfstate files and other files, else you can't push to github due to big size datas.
+
+\
+
+![0ee1d444-09f5-49ae-a172-e8e1b317e7af.png|816.3333740234375](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/0ee1d444-09f5-49ae-a172-e8e1b317e7af.png) [^59]
+
+\
+
+```
+git status
+```
+
+```
+git add . ; git commit -m "gitignore"; git push origin main
+```
+
+![44663c31-5b7e-45ce-bf82-1538d65539bd.png|868.3333740234375](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/44663c31-5b7e-45ce-bf82-1538d65539bd.png)
 
 [^1]: C registry.terraform.io/browse/providers
     Terraform
@@ -1778,4 +1920,478 @@ Instance destroyed now
     i-06572997738622ege
     Terminated
     t2.micro
+
+[^46]: terraform > session1 > EC2 > \\ ec2.tf > { resource "aws_security_group" "roboshop-all" > { egress
+    resource "aws_instance" "web" {
+    ami
+    "ami -Of3c7d07486cad139" #devops-practice
+    W N
+    instance_type = "t2.micro"
+    4
+    vpc_security_group_ids = \[aws_security_group . roboshop-all. id\] #This means list
+    15
+    6
+    tags =
+    7
+    Name = "HelloTerraform"
+    8
+    10
+    11
+    resource "aws_security_group" "roboshop-all" {
+    #This is terraform name, for terraform reference only
+    12
+    name
+    "roboshop-aws-all"
+    #This is AWS name
+    13
+    description = "Allow TLS inbound traffic"
+    14
+    #vpc_id
+    = aws_vpc . main. id
+    15
+    16
+    ingress {
+    17
+    description
+    "Allow All ports"
+    18
+    from_port
+    = 0 # 0 means all ports
+    19
+    to_port
+    20
+    protocol
+    = "tcp"
+    21
+    cidr_blocks
+    = \["0.0.0.0/0"\]
+    22
+    #ipv6_cidr_blocks = \[aws_vpc . main . ipv6_cidr_block\]
+    23
+    24
+    25
+    egress {
+    26
+    from_port
+    = 0
+    27
+    to_port
+    = 0
+    28
+    protocol
+    E
+    1-1"
+    29
+    cidr_blocks
+    = \["0.0.0.0/0"\]
+    30
+    #ipv6_cidr_blocks = \[": :/0"\]
+    31
+    32
+    33
+    tags = {
+    34
+    Name = "roboshop-all-aws"
+    35
+    36
+
+[^47]: Plan: 2 to add, 0 to change, 0 to destroy.
+    Do you want to perform these actions?
+    Terraform will perform the actions described above.
+    Only 'yes' will be accepted to approve.
+    Enter a value: yes
+    aws_security_group . roboshop-al1: Creating. . .
+    aws_security_group . roboshop-al1: Creation complete after 7s \[id=sg-0988913603c42f69c\]
+    aws_instance . web: Creating. . .
+    aws_instance . web: Still creating. .. \[10s elapsed\]
+    aws_instance . web: Still creating. . .
+    \[20s elapsed\]
+    aws_instance . web: Still creating. .. \[30s elapsed\]
+    aws_instance . web: Creation complete after 36s \[id=i-0d3d023636d0954ce\]
+    Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+[^48]: Instances (2) Info
+    G
+    Connect
+    Instance state
+    Actions
+    Q Find Instance by attribute or tag (case-sensitive)
+    All states
+    Name _
+    Instance ID
+    Instance state
+    4
+    Instance type
+    4
+    Status check
+    HelloTerraform
+    i-05198e43da11de64f
+    Terminated
+    t2.micro
+    Hello Terraform
+    i-0d3d023636d0954ce
+    Running
+    t2.micro
+    Initializing
+
+[^49]: i-0d3d023636d0954ce (HelloTerraform)
+    X
+    Details
+    Status and alarms New
+    Monitoring
+    Security
+    Networking
+    Storage
+    Tags
+    Security details
+    IAM Role
+    Owner ID
+    Launch time
+    7 158724841371
+    Tue May 14 2024 10:24:25 GMT+0530 (India Standard Time)
+    Security groups
+    sg-0988913603c42f69c (roboshop-aws-all)
+
+[^50]: terraform destroy
+    aws_security_group. roboshop-all: Refreshing state. .. \[id=sg-0988913603c42f69c\]
+    aws_instance.web: Refreshing state. .. \[id=i-0d3d023636d0954ce\]
+    Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+    - destroy
+    Terraform will perform the following actions:
+    # aws_instance.web will be destroyed
+    - resource "aws_instance" "web" {
+    ami
+    = "ami -Of3c7d07486cad139" -> null
+    arn
+    =
+    "arn: aws : ec2:us-east-1: 158724841371: instance/i-0d3d023636d0954ce" -> null
+    - associate_public_ip_address
+    true -> null
+    availability_zone
+    = "us-east-1d" -> null
+    cpu_core_count
+    = 1 -> null
+    cpu_threads_per_core
+    = 1 -> null
+    disable_api_stop
+    = false -> null
+
+[^51]: "us-east-1a",
+    "us-west-1c",
+
+[^52]: Copy O
+    "image_id": "ami-abc123",
+    "availability_zone_names": \["us-west-la", "us-west-1c"\]
+
+[^53]: EXPLORER
+    . .
+    ec2.tf U .
+    provider.tf U
+    variables.tf U .
+    REPOS
+    terraform > session1 > EC2 > variables.tf > % variable "cidr_blocks"
+    > Ansible
+    1
+    variable "sg-name" {
+    > Concepts
+    12
+    type = string
+    3
+    > notes
+    default = "roboshop-all-aws"
+    4
+    > Robosho-shellscripts
+    M
+    15
+    > roboshop-ansible
+    16
+    variable "sg-description" {
+    > roboshop-ansible-roles
+    7
+    type = string
+    > shellscripts
+    18
+    default = "Allow TLS inbound traffic"
+    terraform \\ session 1 \\ EC2
+    9
+    v .terraform \\ providers \\ registr...
+    10
+    11
+    R LICENSE.txt
+    variable "inbound-from-port" {
+    U
+    12
+    #type = string
+    = terraform-provider-aws_v5.4... U
+    13
+    default = 0
+    E.terraform.lock.hcl
+    U
+    14
+    ec2.tf
+    U
+    15
+    provider.tf
+    U
+    16
+    variable "cidr_blocks" {
+    {} terraform.tfstate
+    17
+    type = list
+    18
+    terraform.tfstate.backup
+    U
+    default = \["0.0.0.0/0"\]
+    19
+    variables.tf
+    U
+
+[^54]: EXPLORER
+    ec2.tf
+    U
+    provider.tf U
+    variables.tf U .
+    REPOS
+    terraform > session1 > EC2 > \\ ec2.tf > 4 resource "aws_security_group" "roboshop-all" > 4 egress
+    > Ansible
+    resource "aws_instance" "web" {
+    > Concepts
+    ami
+    = "ami -Of3c7d07486cad139" #devops-practice
+    W
+    > notes
+    instance_type = "t2.micro"
+    4
+    > Robosho-shellscripts
+    M
+    vpc_security_group_ids = \[aws_security_group . roboshop-all. id\] #This means list
+    5
+    > roboshop-ansible
+    6
+    tags = {
+    > roboshop-ansible-roles
+    7
+    Name = "HelloTerraform"
+    > shellscripts
+    8
+    7
+    v terraform \\ session 1 \\ EC2
+    v .terraform \\ providers \\ registr..
+    16
+    11
+    A LICENSE.txt
+    U
+    12
+    terraform-provider-aws_v5.4... U
+    resource "aws_security_group" "roboshop-all" { #This is terraform name, for terraform reference only
+    13
+    name
+    = var . sg-name - #This is AWS name which reflects in AWS
+    E.terraform.lock.hcl
+    U
+    14
+    description = var . sg-description
+    ec2.tf
+    U
+    15
+    #vpc_id
+    = aws_vpc . main . id
+    provider.tf
+    U
+    16
+    {} terraform.tfstate
+    U
+    17
+    ingress {
+    18
+    E terraform.tfstate.backup
+    U
+    description
+    = "Allow All ports"
+    19
+    from_port
+    variables.tf
+    U
+    = var . inbound-from-port #0 means all ports
+    20
+    to_port
+    21
+    protocol
+    "tcp"
+    22
+    cidr_blocks
+    = var . cidr_blocks -
+    23
+    #ipv6_cidr_blocks = \[aws_vpc. main. ipv6_cidr_block\]
+    24
+    25
+    26
+    egress {
+    27
+    from_port
+    28
+    to_port
+    29
+    protocol
+    11 -1"
+    30
+    cidr_blocks
+    = \["0.0.0.0/0"\]
+    31
+    #ipv6_cidr_blocks = \[": :/0"\]
+    32
+    33
+    34
+    tags = {
+    35
+    Name = "roboshop-all-aws"
+    36
+    37
+
+[^55]: PS E: \\AWSDevops\\Repos \\terraform\\session1\\EC2> terraform apply -auto-approve
+    Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+    + create
+    Terraform will perform the following actions:
+    # aws_instance. web will be created
+    + resource "aws_instance" "web" {
+    + ami
+    "ami-Of3c7d07486cad139"
+    + arn
+    (known after apply)
+    associate public ip address
+    (known after apply )
+
+[^56]: Instances (1/2) Info
+    Connect
+    Instance state
+    Actions
+    Q Find Instance by attribute or tag (case-sensitive)
+    All states
+    -
+    Name _
+    Instance ID
+    Instance state
+    4
+    Instance type
+    4
+    Status check
+    V
+    Hello Terraform
+    i-0d3d023636d0954ce
+    Terminated
+    t2.micro
+    0
+    HelloTerraform
+    i-07af569f8baca9852
+    Running
+    t2.micro
+    Initializing
+
+[^57]: PS E: \\AWSDevops \\Repos \\terraform\\session1\\EC2> terraform destroy -auto-approve
+    aws_security_group. roboshop-all: Refreshing state... \[id=sg-030a19b7fa5354b6f\]
+    aws_instance. web: Refreshing state. .. \[id=i-07af569f8baca9852\]
+    Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+    - destroy
+    Terraform will perform the following actions:
+    # aws_instance.web will be destroyed
+    - resource "aws_instance" "web" {
+    ami
+    "ami -Of3c7d07486cad139" -> null
+    arn
+    "arn: aws : ec2: us-east-1: 158724841371: instance/i-07af569f8baca9852" -> null
+
+[^58]: Plan: 0 to add, 0 to change, 2 to destroy.
+    aws_instance . web: Destroying. .. \[id=i-07af569f8baca9852\]
+    aws_instance.web: Still destroying... \[id=i-07af569f8baca9852, 10s elapsed\]
+    aws_instance.web: Still destroying. .. \[id=i-07af569f8baca9852, 20s elapsed\]
+    aws_instance.web: Still destroying... \[id=i-07af569f8baca9852, 30s elapsed\]
+    aws_instance.web: Still destroying... \[id=i-07af569f8baca9852, 40s elapsed\]
+    aws_instance . web: Destruction complete after 43s
+    aws_security_group. roboshop-all: Destroying... \[id=sg-030a19b7fa5354b6f\]
+    aws_security_group. roboshop-all: Destruction complete after 2s
+    Destroy complete! Resources: 2 destroyed.
+    PS E: \\AWSDevops\\Repos \\terraform\\session1\\EC2>
+
+[^59]: REPOS
+    terraform > session1 > EC2 > @ .gitignore
+    > Ansible
+    1
+    # Local . terraform directories
+    Concepts
+    2
+    \*\*/ . terraform/\*
+    3
+    notes
+    4
+    # . tfstate files
+    > Robosho-shellscripts
+    M
+    5
+    \* . tfstate
+    > roboshop-ansible
+    6
+    \* . tfstate.\*
+    > roboshop-ansible-roles
+    7
+    shellscripts
+    8
+    # Crash log files
+    terraform \\ session1 \\ EC2
+    9
+    crash . log
+    v .terraform \\ providers \\ registry.terra...
+    10
+    crash. \* . log
+    11
+    A LICENSE.txt
+    12
+    # Exclude all . tfvars files, which are likely to contain sensitive data, such as
+    terraform-provider-aws_v5.49.0_x...
+    13
+    # password, private keys, and other secrets. These should not be part of version
+    .gitignore
+    14
+    # control as they are data points which are potentially sensitive and subject
+    E .terraform.lock.hcl
+    15
+    # to change depending on the environment.
+    ec2.tf
+    16
+    \* . tfvars
+    provider.tf
+    17
+    \* . tfvars . json
+    18
+    {} terraform.tfstate
+    19
+    # Ignore override files as they are usually used to override resources locally and so
+    = terraform.tfstate.backup
+    20
+    # are not checked in
+    variables.tf
+    21
+    override . tf
+    22
+    override . tf . json
+    23
+    \*_override. tf
+    24
+    \*_override. tf . json
+    25
+    26
+    # Include override files you do wish to add to version control using negated pattern
+    27
+    # !example_override . tf
+    28
+    29
+    # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
+    30
+    # example: \*tfplan\*
+    31
+    32
+    # Ignore CLI configuration files
+    33
+    . terraformrc
+    34
+    terraform. rc
 
