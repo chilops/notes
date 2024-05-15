@@ -1,7 +1,7 @@
 ﻿---
 title: 26Day_Terraform
 uuid: 3d5f36c2-11b8-11ef-af96-9a665e06d35f
-version: 373
+version: 903
 created: '2024-05-14T11:37:27+05:30'
 tags:
   - terraform
@@ -16,6 +16,18 @@ tags:
     1. *If variable not declared*
 
     1. *variables overriding*
+
+1. <mark style="background-color:#f8d616;">Conditions -<!-- {"backgroundCycleColor":"25"} --></mark> <mark style="background-color:#f8914d;">we use conditions heavily in terraform<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"offset":1} -->
+
+1. <mark style="background-color:#f8d616;">Loops - Two types<!-- {"backgroundCycleColor":"25"} --></mark>
+
+    1. count based loop - Its a terraform concept  <mark style="background-color:#f8914d;">(Launched all instances and created Route53 records)<!-- {"backgroundCycleColor":"24"} --></mark>
+
+    1. for each loop
+
+1. <mark style="background-color:#f8d616;">Functions<!-- {"backgroundCycleColor":"25"} --></mark><!-- {"offset":3} -->
+
+1. <mark style="background-color:#f8d616;">Locals<!-- {"backgroundCycleColor":"25"} --></mark>
 
 \
 
@@ -249,7 +261,379 @@ terraform plan -var-file="roboshop.tfvars" -var="instance_type=t3.medium"
 
 \
 
-*29.15*
+\
+
+\
+
+<mark style="background-color:#f8914d;">**Conditions :**<!-- {"backgroundCycleColor":"24"} --></mark>
+
+\
+
+**Syntax:**
+
+```
+if (expression) {
+         if true this will run
+}
+```
+
+```
+if (expression) {
+          if true this will run
+}
+else {
+          if false this will run
+}
+```
+
+\
+
+One line syntax for conditions: terraform will follow this.
+
+```
+expression ? "this will run if true" : "this will run if false"
+```
+
+\
+
+<mark style="background-color:#f8d616;">Conditions folder created & provider.tf file created.<!-- {"backgroundCycleColor":"25"} --></mark>
+
+```
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.49.0"  #AWS provider version, not terraform version
+    }
+  }
+}
+
+provider "aws" {
+     region = "us-east-1"
+}
+```
+
+![541fa4a5-ad81-44c4-9985-f2c6183c43c7.png|842.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/541fa4a5-ad81-44c4-9985-f2c6183c43c7.png) [^33]
+
+\
+
+**conditions.tf code**
+
+```
+resource "aws_instance" "web" {
+  ami           = var.ami_id #devops-practice
+  instance_type = var.instance_name == "MongoDB" ? "t3.small" : "t2.micro"
+}
+```
+
+![6e503cb1-1c3f-49c4-81df-c9c516f528e7.png|887.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/6e503cb1-1c3f-49c4-81df-c9c516f528e7.png) [^34]
+
+\
+
+**Variables.tf code**
+
+```
+variable "instance_name" {
+  type = string
+  default = "MongoDB"
+}
+
+variable "ami_id" {
+  type = string
+  default = "ami-0f3c7d07486cad139"
+}
+```
+
+![3e45a315-2061-4616-b904-4cb1ce9a06b2.png|578](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/3e45a315-2061-4616-b904-4cb1ce9a06b2.png) [^35]
+
+\
+
+```
+terraform init
+```
+
+![cd2e6bbe-f1bd-4ba4-bf04-08a95d9c4fe2.png|682](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/cd2e6bbe-f1bd-4ba4-bf04-08a95d9c4fe2.png) [^36]
+
+\
+
+so it selects t3.small instance
+
+```
+terraform plan
+```
+
+![ae806d6f-dd10-4f54-ba67-f37c970a8c04.png|915.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/ae806d6f-dd10-4f54-ba67-f37c970a8c04.png) [^37]
+
+\
+
+But if i change in variables from mongodb to web. so the condition is not true then see the output.
+
+```
+variable "instance_name" {
+  type = string
+  default = "web"
+}
+
+variable "ami_id" {
+  type = string
+  default = "ami-0f3c7d07486cad139"
+}
+```
+
+\
+
+![daa42fde-06e7-435e-94da-d7a17136cbcd.png|878](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/daa42fde-06e7-435e-94da-d7a17136cbcd.png) [^38]
+
+```
+terraform plan
+```
+
+![4c404bd7-bc97-4e76-b4f5-7772098d67d3.png|838.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/4c404bd7-bc97-4e76-b4f5-7772098d67d3.png) [^39]
+
+\
+
+\
+
+<mark style="background-color:#f8914d;">**Loops**<!-- {"backgroundCycleColor":"24"} --></mark>
+
+1.  <mark style="background-color:#f8d616;">Two types<!-- {"backgroundCycleColor":"25"} --></mark>
+
+    1. count based loop - Its a terraform concept
+
+    1. for each loop
+
+\
+
+<mark style="background-color:#f8914d;">Count based loop - Its a terraform concept<!-- {"backgroundCycleColor":"24"} --></mark>
+
+<mark style="background-color:#fff;">count folder created & provider.tf file created.<!-- {"backgroundCycleColor":"11"} --></mark>
+
+```
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.49.0"  #AWS provider version, not terraform version
+    }
+  }
+}
+
+provider "aws" {
+     region = "us-east-1"
+}
+```
+
+![b084c23a-a503-4e8d-84fc-57f4df3819f4.png|783.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/b084c23a-a503-4e8d-84fc-57f4df3819f4.png) [^40]
+
+\
+
+\
+
+**What is terraform output?**
+
+```
+Terraform output is used to get the information from the created resources. 
+EX. When we created an instance if we need instance ID, AMI ID or any other details from created instance 
+we can get from it in output.
+
+Also terraform output is used to get the information of one resource and provide as input to other resources.
+```
+
+}![4306e35b-51dc-4aed-98cc-211ce9637fcd.png|699](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/4306e35b-51dc-4aed-98cc-211ce9637fcd.png) [^41]
+
+\
+
+```
+cd variables
+```
+
+```
+terraform apply -auto-approve
+```
+
+![d0a4baa4-b8a4-4eff-a36f-3f09e5859147.png|917.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/d0a4baa4-b8a4-4eff-a36f-3f09e5859147.png) [^42]
+
+![cff55307-8892-4098-a8ca-571be445e9f8.png|711](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/cff55307-8892-4098-a8ca-571be445e9f8.png) [^43]
+
+\
+
+<mark style="background-color:#f3de6c;">To check how terraform output comes:<!-- {"backgroundCycleColor":"14"} --></mark>
+
+\
+
+count.tf code
+
+![7db22dcf-2cd5-4f4a-8b2e-767b5694d9e5.png|1163.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/7db22dcf-2cd5-4f4a-8b2e-767b5694d9e5.png) [^44]
+
+\
+
+output.tf code (where to test the output which we requested)
+
+![4a6a12f0-ce63-43a9-8d24-b73981cd0cdc.png|771](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/4a6a12f0-ce63-43a9-8d24-b73981cd0cdc.png) [^45]
+
+\
+
+```
+terraform init
+```
+
+```
+terraform apply -auto-approve
+```
+
+Huge output generated for 11 instances. below is just a sample output.
+
+![1e092086-a19e-4f47-a445-c7d7df9cebbc.png|620](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/1e092086-a19e-4f47-a445-c7d7df9cebbc.png) [^46]
+
+Instances created
+
+![9303d6f9-d1a4-45ff-8846-603336c445e3.png|781.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/9303d6f9-d1a4-45ff-8846-603336c445e3.png) [^47]
+
+\
+
+\
+
+<mark style="background-color:#f3de6c;">Here testing usecase is.. create instances & update route53...<!-- {"backgroundCycleColor":"14"} --></mark>
+
+\
+
+count.tf code
+
+![de6680d4-650e-421d-8f03-d4d3ce77f4c3.png|888.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/de6680d4-650e-421d-8f03-d4d3ce77f4c3.png) [^48]
+
+\
+
+variables.tf code
+
+![8d864c8e-42cd-43c5-bd9f-bb83418ac6dc.png|886.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/8d864c8e-42cd-43c5-bd9f-bb83418ac6dc.png) [^49]
+
+\
+
+output.tf (its commented)
+
+![69aac344-076a-4368-9228-1f153e8bf2cd.png|437](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/69aac344-076a-4368-9228-1f153e8bf2cd.png) [^50]
+
+\
+
+```
+terraform apply -auto-approve
+```
+
+\
+
+![f1df183f-645f-4e90-84dd-f7906ff10b65.png|826.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/f1df183f-645f-4e90-84dd-f7906ff10b65.png) [^51]
+
+![3ac26af6-1f32-4e06-94b9-1d928d0423dc.png|826](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/3ac26af6-1f32-4e06-94b9-1d928d0423dc.png) [^52]
+
+\
+
+All Instances created.. t3.small created for mongodb, mysql, shipping
+
+![4f7e3451-6b7e-4fab-b86f-faf01808dca2.png|852.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/4f7e3451-6b7e-4fab-b86f-faf01808dca2.png) [^53]
+
+\
+
+Route53 records also created, for web public ip assigned.
+
+![cf34e657-6bae-49ea-9c71-8f24dbb25ae2.png|873.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/cf34e657-6bae-49ea-9c71-8f24dbb25ae2.png) [^54]
+
+\
+
+```
+terraform destroy -auto-approve
+```
+
+\
+
+<mark style="background-color:#f8914d;">**Functions :**<!-- {"backgroundCycleColor":"24"} --></mark> <mark style="background-color:#f8d616;">**Terraform has its own function, those we can use it. But we can't create own functions in terraform.**<!-- {"backgroundCycleColor":"25"} --></mark>
+
+\
+
+We need to give some input -- It will do some work -- It will give some output
+
+N no.of times we can use it.
+
+\
+
+[Functions - Configuration Language \| Terraform \| HashiCorp Developer](https://developer.hashicorp.com/terraform/language/functions)    -- useful link for terraform functions lot of options are available
+
+ 
+
+```
+terraform console
+max(5,12, 9)
+min(1, 3, 2)
+join("-", ["foo", "bar", "baz"])
+split(",", "foo,bar,baz"])
+```
+
+\
+
+![d35671f4-71a3-41df-932b-96787bb752f0.png|676](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/d35671f4-71a3-41df-932b-96787bb752f0.png) [^55]
+
+\
+
+Here length function is used to calculate the list from **variables.tf,** so if instances increases also count function will take care.
+
+ ![b2ccf2d5-d88e-43fd-8869-817c48985774.png|932.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/b2ccf2d5-d88e-43fd-8869-817c48985774.png) [^56]
+
+![8da0e91a-89f3-4584-8438-f2809736718d.png|989.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/8da0e91a-89f3-4584-8438-f2809736718d.png) [^57]
+
+\
+
+\
+
+\
+
+<mark style="background-color:#f8914d;">**Locals**<!-- {"backgroundCycleColor":"24"} --></mark>
+
+Locals is just like variables, but it have some extra capabilities. you can keep functions and expressions inside locals and use them.
+
+\
+
+![238e5293-ea76-46aa-86c4-c037bb273903.png|580](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/238e5293-ea76-46aa-86c4-c037bb273903.png) [^58]
+
+![9c7b4642-72ae-4450-b5a6-1892a4b66853.png|566](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/9c7b4642-72ae-4450-b5a6-1892a4b66853.png)
+
+\
+
+local.tf code
+
+![2cb5695b-c190-4036-8153-488740390991.png|975.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/2cb5695b-c190-4036-8153-488740390991.png) [^59]
+
+\
+
+count.tf code
+
+![a4c641b6-0d4d-4e12-977a-9c8996cbd526.png|994.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/a4c641b6-0d4d-4e12-977a-9c8996cbd526.png) [^60]
+
+\
+
+variables.tf code
+
+![277767b6-6b8a-4ac1-a856-272ba280af15.png|999.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/277767b6-6b8a-4ac1-a856-272ba280af15.png) [^61]
+
+\
+
+```
+terraform plan
+```
+
+![eb469bea-2820-49a9-b0c3-14980f6251e5.png|689](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/eb469bea-2820-49a9-b0c3-14980f6251e5.png) [^62]
+
+\
+
+\
+
+\
+
+\
+
+\
+
+\
+
+\
 
 \
 
@@ -996,4 +1380,1077 @@ terraform plan -var-file="roboshop.tfvars" -var="instance_type=t3.medium"
     # 3. terraform . tfvars
     14
     # 4. ENV variables
+
+[^33]: EXPLORER
+    . .
+    provider.tf .\\conditions U X provider.tf . \\variables
+    V REPOS
+    terraform > conditions > provider.tf > ...
+    > Ansible
+    1
+    terraform {
+    > Concepts
+    required_providers {
+    3
+    > notes
+    aws = {
+    4
+    source = "hashicorp/aws"
+    > Robosho-shellscripts
+    M
+    5
+    version = "5.49.0" #AWS provider version, not terraform version
+    > roboshop-ansible
+    6
+    > roboshop-ansible-roles
+    7
+    > shellscripts
+    18
+    terraform
+    9
+    conditions
+    10
+    provider "aws" {
+    11
+    provider.tf
+    region = "us-east-1"
+    U
+    12
+    > session1 \\ EC2
+    13
+    > variables
+    .gitignore
+
+[^34]: REPOS
+    terraform > conditions > conditions.tf > 4% resource "aws_instance" "web"
+    > Ansible
+    1
+    resource . "aws_instance" "web" . {
+    > Concepts
+    2
+    ami .
+    . . = . var . ami_id .#devops-practice
+    3
+    > notes
+    instance_type = var . instance_name == "MongoDB" ? "t3. small" : "t2.micro"
+    4
+    > Robosho-shellscripts
+    M
+    5
+    > roboshop-ansible
+    > roboshop-ansible-roles
+    > shellscripts
+    terraform
+    conditions
+    conditions.tf
+    U
+
+[^35]: terraform > conditions > variables.tf > < variable "ami_id"
+    1
+    variable "instance_name" {
+    12
+    type = string
+    3
+    default = "MongoDB"
+    4
+    15
+    6
+    variable "ami_id" {
+    7
+    type = string
+    18
+    default = "ami-Of3c7d07486cad139"
+    9
+
+[^36]: PS E: \\AWSDevops\\Repos \\terraform> cd . \\conditions\\
+    PS E: \\AWSDevops\\Repos \\terraform\\conditions> terraform init
+    Initializing the backend. ..
+    Initializing provider plugins. ..
+    Finding hashicorp/aws versions matching "5.49.0"...
+    Installing hashicorp/aws v5. 49.0...
+    Installed hashicorp/aws v5. 49.0 (signed by HashiCorp)
+    Terraform has created a lock file . terraform. lock.hcl to record the provider
+    selections it made above. Include this file in your version control repository
+    so that Terraform can guarantee to make the same selections by default when
+    you run "terraform init" in the future.
+    Terraform has been successfully initialized!
+    You may now begin working with Terraform. Try running "terraform plan" to see
+    any changes that are required for your infrastructure. All Terraform commands
+    should now work.
+    If you ever set or change modules or backend configuration for Terraform,
+    rerun this command to reinitialize your working directory. If you forget, other
+    commands will detect it and remind you to do so if necessary.
+    PS E: \\AWSDevops\\Repos \\terraform\\conditions>
+
+[^37]: PS E: \\AWSDevOps \\Repos \\terraform\\conditions> terraform plan
+    Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+    + create
+    Terraform will perform the following actions:
+    # aws_instance.web will be created
+    + resource "aws_instance" "web" {
+    - ami
+    "ami-Of3c7d07486cad139"
+    + arn
+    = (known after apply)
+    + associate_public_ip_address
+    = (known after apply)
+    + availability_zone
+    =
+    (known after apply)
+    + cpu_core_count
+    (known after apply)
+    + cpu_threads_per_core
+    E
+    (known after apply)
+    disable_api_stop
+    = (known after apply)
+    + disable_api_termination
+    = (known after apply)
+    + ebs_optimized
+    = (known after apply)
+    + get_password_data
+    = false
+    + host id
+    = (known after apply)
+    host_resource_group_arn
+    = (known after apply)
+    + iam_instance_profile
+    = (known after apply)
+    id
+    = (known after apply)
+    + instance_initiated_shutdown_behavior = (known after apply)
+    + instance_lifecycle
+    = (known after apply)
+    + instance_state
+    = (known after apply)
+    instance_type
+    "t3. small"
+    + ipv6_address_count
+    (known after apply)
+    + ipv6_addresses
+    E
+    (known after apply)
+
+[^38]: V REPOS
+    terraform > conditions > variables.tf > 1 variable "instance_name" > . default
+    > Ansible
+    1
+    variable "instance_name" {
+    > Concepts
+    2
+    type = string
+    3
+    default = "web"
+    > notes
+    4
+    > Robosho-shellscripts
+    M
+    15
+    > roboshop-ansible
+    6
+    variable "ami_id" {
+    > roboshop-ansible-roles
+    7
+    type = string
+    > shellscripts
+    18
+    default = "ami-Of3c7d07486cad139"
+    terraform
+    9
+    conditions
+    > .terraform
+    E .terraform.lock.hcl
+    U
+    conditions.tf
+    U
+    provider.tf
+    U
+    variables.tf
+    U
+
+[^39]: PS E: \\AWSDevops\\Repos \\terraform\\conditions> terraform plan
+    Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+    + create
+    Terraform will perform the following actions:
+    # aws_instance.web will be created
+    + resource "aws_instance" "web" {
+    + ami
+    =
+    "ami -Of3c7d07486cad139"
+    +
+    arn
+    = (known after apply)
+    + associate_public_ip_address
+    = (known after apply)
+    availability_zone
+    = (known after apply)
+    + cpu_core_count
+    = (known after apply)
+    + cpu_threads_per_core
+    = (known after apply)
+    + disable_api_stop
+    = (known after apply)
+    +
+    disable_api_termination
+    = (known after apply)
+    +
+    ebs_optimized
+    = (known after apply)
+    + get_password_data
+    = false
+    + host_id
+    = (known after apply)
+    + host_resource_group_arn
+    = (known after apply)
+    + iam_instance_profile
+    = (known after apply)
+    + id
+    = (known after apply)
+    + instance_initiated_shutdown_behavior = (known after apply)
+    + instance_lifecycle
+    = (known after apply)
+    + instance_state
+    (known after apply)
+    + instance_type
+    = "t2.micro"
+    + ipv6_address_count
+    = (known after apply)
+
+[^40]: V REPOS
+    terraform > count > provider.tf > $8 provider "aws"
+    > Ansible
+    1
+    terraform {
+    > Concepts
+    2
+    required_providers {
+    3
+    > notes
+    aws = {
+    4
+    > Robosho-shellscripts
+    source = "hashicorp/aws"
+    M
+    5
+    version = "5.49.0" #AWS provider version, not terraform version
+    > roboshop-ansible
+    6
+    > roboshop-ansible-roles
+    7
+    > shellscripts
+    8
+    terraform
+    9
+    > conditions
+    10
+    provider "aws" {
+    11
+    region = "us-east-1"
+    count
+    12
+    provider.tf
+    U
+    > session1
+    > variables
+    .gitignore
+
+[^41]: REPOS
+    terraform > variables > output.tf > $ output "private_ip"
+    > Ansible
+    1
+    # output "instance_info" {
+    > Concepts
+    2
+    #
+    value = aws_instance . web
+    3
+    #
+    > notes
+    4
+    > Robosho-shellscripts
+    M
+    5
+    output "instance_id" {
+    > roboshop-ansible
+    6
+    value = aws_instance . web. id
+    > roboshop-ansible-roles
+    7
+    > shellscripts
+    18
+    terraform
+    9
+    output "public_ip" {
+    > conditions
+    10
+    value = aws_instance . web . public_ip
+    11
+    }
+    count
+    12
+    count.tf
+    U
+    13
+    output "private_ip" {
+    provider.tf
+    U
+    14
+    value = aws_instance . web . private_ip
+    variables.tf
+    C
+    15
+    > session1
+    variables
+    > .terraform
+    E .terraform.lock.hcl
+    ec2.tf
+    M
+    output.tf
+    -
+    U
+    provider.tf
+
+[^42]: PS E: \\AWSDevops\\Repos \\terraform\\variables> terraform apply -auto-approve
+    Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+    + create
+    Terraform will perform the following actions:
+    # aws_instance.web will be created
+    + resource "aws_instance" "web" {
+    + ami
+    = "ami -Of3c7d07486cad139"
+    arn
+    = (known after apply)
+
+[^43]: Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+    Outputs :
+    instance id = "i-00af112b562918f85"
+    private_ip = "172.31.28.182"
+    public_ip = "3.92.1.30"
+    PS E: \\AWSDevOps\\Repos \\terraform\\variables>
+
+[^44]: REPOS
+    terraform > count > count.tf > ...
+    > Ansible
+    1
+    resource "aws_instance" "web" {
+    > Concepts
+    #count = 11 # count. index is a special variable given by terraform
+    W N
+    > notes
+    count = length(var . instance_names)
+    4
+    ami
+    = var . ami_id #devops-practice
+    > Robosho-shellscripts
+    M
+    5
+    instance_type = var . instance_names \[count . index\] == "mongodb" \| \| var . instance_names \[count. index\] == "mysql" \| \| var . instance_names
+    > roboshop-ansible
+    \[ count . index\] == "shipping" ? "t3. small" : "t2.micro"
+    > roboshop-ansible-roles
+    6
+    tags = {
+    > shellscripts
+    7
+    Name = var . instance_names \[ count . index \]
+    terraform
+    8
+    }
+    9
+    > conditions
+    10
+    count
+    11
+    # resource "aws_route53_record" "www" {
+    count.tf
+    U
+    12
+    #
+    #count = 11
+    output.tf
+    U
+    13
+    #
+    count = length (var . instance_names)
+    provider.tf
+    U
+    14
+    #
+    zone_id = var . zone_id
+    variables.tf
+    U
+    15
+    #
+    name
+    "${var . instance_names \[ count . index \]} . ${var . domain_name}" #interpolation
+    > session1
+    O
+    16
+    #
+    type
+    = "A"
+    17
+    #
+    > variables
+    tt1
+    18
+    #
+    records = \[var . instance_names \[count . index\] == "web" ? aws_instance . web \[count . index\] . public_ip : aws_instance . web \[count . index\].
+    .gitignore
+    private_ip\]
+    6T
+    #
+
+[^45]: V REPOS
+    terraform > count > output.of > $ output "instances_info"
+    > Ansible
+    1
+    output "instances_info" {
+    > Concepts
+    2
+    value = aws_instance . web
+    3
+    > notes
+    > Robosho-shellscripts
+    M
+    > roboshop-ansible
+    > roboshop-ansible-roles
+    > shellscripts
+    terraform
+    > conditions
+    count
+    count.tf
+    U
+    output.tf
+    U
+    provider.tf
+    C
+
+[^46]: instance_metadata_tags" = "disabled"
+    1)
+    "monitoring" = false
+    "network_interface" = toset(\[\])
+    "outpost_arn" = ""
+    "password_data" = "l
+    "placement_group" = "I
+    "placement_partition_number" = 0
+    "primary_network_interface_id" = "eni-06bba963434a007e0"
+    "private_dns" = "ip-172-31-17-132.ec2. internal"
+    "private_dns_name_options" = tolist(\[
+    "enable_resource_name_dns_a_record" = false
+    "enable_resource_name_dns_aaaa_record" = false
+    "hostname_type" = "ip-name"
+    "private_ip" = "172. 31.17.132"
+    "public_dns" = "ec2-18-212-229-220. compute-1. amazonaws . com"
+    "public_ip" = "18.212.229.220"
+    "root_block_device" = tolist(\[
+
+[^47]: Instances (11) Info
+    C
+    Connect
+    Instance state
+    Actions
+    Q Find Instance by attribute or tag (case-sensitive)
+    All states
+    Instance state = running
+    X
+    Clear filters
+    Name _
+    4
+    Instance ID
+    Instance state
+    V
+    Instance type
+    4
+    Status check
+    Al
+    redis
+    i-02ad20cbd6a0d653a
+    Running
+    t2.micro
+    2/2 checks passed Vie
+    shipping
+    i-07b4caaac604d38c9
+    Running
+    t3.small
+    2/2 checks passed Vie
+    dispatch
+    i-018969ab9241c3791
+    Running
+    t2.micro
+    2/2 checks passed Vie
+    user
+    i-07208f04f52ae3d8e
+    Running
+    t2.micro
+    2/2 checks passed Vie
+    rabbitmq
+    i-006b7aa337813ed58
+    Running
+    t2.micro
+    2/2 checks passed Vie
+    cart
+    i-02b5a 1ad88df96416
+    Running
+    t2.micro
+    2/2 checks passed Vie
+    catalogue
+    i-Of3e3860c2f857beb
+    Running
+    t2.micro
+    2/2 checks passed Vie
+    payment
+    i-01d60f20f8368d24e
+    Running
+    t2.micro
+    2/2 checks passed Vie
+    web
+    i-026fcbdb69c50cf78
+    Running
+    t2.micro
+    2/2 checks passed Vie
+    mongodb
+    i-0d424bf5a81472691
+    Running
+    t3.small
+    2/2 checks passed Vi
+    O
+    mysql
+    i-069e9be0878e729a1
+    Running
+    t3.small
+    Initializing
+    Vie
+
+[^48]: terraform > count > count.tf > % resource "aws_route53_record" "www"
+    1
+    resource "aws_instance" "web" {
+    2
+    #count = 11 # count . index is a special variable given by terraform
+    3
+    count = length (var . instance_names )
+    4
+    ami
+    = var . ami_id #devops-practice
+    5
+    instance_type = var . instance_names \[count. index\] == "mongodb" \| \| var . instance_names \[count . index\] == "mysql" \| \| var . instance_names
+    \[ count . index\] == "shipping" ? "t3. small" : "t2.micro"
+    6
+    tags = {
+    7
+    Name = var . instance_names \[ count . index \]
+    8
+    9
+    10
+    11
+    resource "aws_route53_record" "www" {
+    12
+    #count = 11
+    13
+    count = length (var . instance_names)
+    14
+    zone_id = var . zone_id
+    15
+    name
+    = "${var . instance_names \[ count . index\]} . ${var . domain_name}" #interpolation
+    16
+    type
+    "A"
+    17
+    tt1
+    = 1
+    18
+    records = \[var . instance_names \[count . index\] == "web" ? aws_instance. web\[count . index\] . public_ip : aws_instance . web \[count . index\].
+    private_ip\]
+    19
+
+[^49]: terraform > count > \\ variables.tf > ' variable "domain_name'
+    1
+    variable "instance_names" {
+    2
+    type = list
+    3
+    default = \["mongodb", "redis", "mysql", "rabbitmq", "catalogue", "user", "cart", "shipping", "payment", "dispatch", "web"\]
+    4
+    15
+    6
+    variable "ami_id" {
+    7
+    default = "ami-Of3c7d07486cad139"
+    8
+    19
+    10
+    variable "zone_id" {
+    11
+    default = "Z06431971951XUVZELNIC"
+    12
+    13
+    14
+    variable "domain_name" {
+    15
+    default = "chowdarychilukuri. in"
+    16
+
+[^50]: terraform > count > output.tf
+    1
+    #
+    output "instances_info" {
+    12
+    #
+    value = aws_instance . web
+    3
+    #
+
+[^51]: PS E: \\AWSDevOps \\Repos \\terraform\\count> terraform apply -auto-approve
+    Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+    + create
+    Terraform will perform the following actions:
+    # aws_instance.web\[0\] will be created
+    resource "aws_instance" "web" {
+    ami
+    = "ami-Of3c7d07486cad139"
+    +
+    arn
+    = (known after apply)
+    + associate_public_ip_address
+    = (known after apply)
+    + availability_zone
+    = (known after apply)
+
+[^52]: aws_route53_record.www\[0\]: Creation complete after 50s \[id=Z06431971951XUVZELNIC_mongodb. chowdarychilukuri . in_A\]
+    Apply complete! Resources: 22 added, 0 changed, 0 destroyed.
+    PS E: \\AWSDevops \\Repos \\terraform\\count>
+
+[^53]: Instances (23) Info
+    C
+    Connect
+    Instance state
+    Actions
+    La
+    Q Find Instance by attribute or tag (case-sensitive)
+    All states
+    Name _
+    Instance ID
+    Instance state
+    4
+    Instance type
+    4
+    Status check
+    Alarm sta
+    shipping
+    i-0360968c40387 c062
+    Running
+    t3.small
+    2/2 checks passed View alar
+    redis
+    i-02ad20cbd6a0d653a
+    Terminated
+    t2.micro
+    View alar
+    shipping
+    i-07b4caaac604d38c9
+    Terminated
+    Q Q
+    t3.small
+    View alar
+    dispatch
+    i-018969ab9241c3791
+    Terminated
+    t2.micro
+    View alari
+    user
+    i-07208f04f52ae3d8e
+    Terminated
+    t2.micro
+    View alar
+    rabbitmq
+    i-006b7aa337813ed58
+    Terminated
+    t2.micro
+    View alar
+    cart
+    i-0265a 1ad88df96416
+    Terminated
+    t2.micro
+    View alarm
+    catalogue
+    i-Of3e3860c2f857beb
+    Terminated
+    t2.micro
+    View alar
+    user
+    i-0724b23cd7fd1c97a
+    Running
+    t2.micro
+    2/2 checks passed View alar
+    mysql
+    i-0a7d96921c985fb91
+    Running
+    t3.small
+    2/2 checks passed View alar
+    payment
+    i-01d60f20f8368d24e
+    Terminated
+    t2.micro
+    View alar
+    web
+    i-026fcbdb69c50cf78
+    Terminated
+    t2.micro
+    View alar
+    mongodb
+    i-Od424bf5a81472691
+    Terminated
+    t3.small
+    -
+    View alar
+    Select an instance
+
+[^54]: Q Filter records by property or value
+    Type
+    Routing policy
+    Alias
+    0
+    Record ... V Type
+    Routin...
+    4
+    Differ...
+    4
+    Alias
+    4
+    Value/Route traffic to
+    4
+    TTL (S...
+    ns-59.awsdns-07.com.
+    ns-1889.awsdns-44.co.uk.
+    0
+    chowdary...
+    NS
+    Simple
+    No
+    172800
+    ns-1039.awsdns-01.org.
+    ns-836.awsdns-40.net.
+    O
+    chowdary...
+    SOA
+    Simple
+    No
+    ns-59.awsdns-07.com. awsdn...
+    900
+    cart.chow...
+    A
+    Simple
+    No
+    172.31.27.197
+    1
+    O
+    catalogue....
+    A
+    Simple
+    No
+    172.31.29.106
+    dispatch.c...
+    A
+    Simple
+    No
+    172.31.21.236
+    mongodb....
+    A
+    Simple
+    No
+    172.31.20.166
+    0
+    mysql.cho...
+    A
+    Simple
+    No
+    172.31.18.241
+    O
+    payment....
+    A
+    Simple
+    No
+    172.31.24.16
+    0
+    rabbitmq....
+    A
+    Simple
+    No
+    172.31.18.169
+    O
+    redis.cho...
+    A
+    Simple
+    No
+    172.31.29.58
+    0
+    shipping.c...
+    A
+    Simple
+    No
+    172.31.16.235
+    user.chow...
+    A
+    Simple
+    No
+    172.31.24.238
+    web.chow...
+    A
+    Simple
+    No
+    3.95.201.149
+    1
+
+[^55]: C: \\devops \\daws-76s\\repos \\terraform\\variables>terraform console
+    > max (5, 12, 9)
+    12
+    > min (1, 2, 3)
+    1
+    > join("-", \["foo", "bar", "baz"\])
+    "foo-bar-baz"
+    > lower ( "HELLO")
+    "hello"
+    > split(", " "foo, bar, baz")
+    tolist(\[
+    "foo "
+    "bar"
+    "baz"
+
+[^56]: terraform > count > variables.tf > $ variable "domain_name"
+    1
+    variable "instance_names" {
+    2
+    type = list
+    13
+    default = \["mongodb", "redis", "mysql", "rabbitmq", "catalogue", "user", "cart", "shipping", "payment", "dispatch", "web"\]
+    4
+    15
+    6
+    variable "ami_id" {
+    7
+    default = "ami-Of3c7d07486cad139"
+    8
+    9
+    10
+    variable "zone_id" {
+    11
+    default = "Z06431971951XUVZELNIC"
+    12
+    13
+    14
+    variable "domain_name" {
+    15
+    default = "chowdarychilukuri . in"
+    16
+
+[^57]: terraform > count > count.tf > $ resource "aws_instance" "web"
+    resource "aws_instance" "web" {
+    #count = 11 # count . index is a special variable given by terraform
+    3
+    count = length (var . instance_names)
+    4
+    ami
+    = var . ami_id #devops-practice
+    5
+    instance_type = var . instance_names \[count . index\] == "mongodb" \| \| var . instance_names \[count . index\] == "mysql" \| \| var . instance_names
+    \[ count . index\] == "shipping" ? "t3. small" : "t2.micro"
+    6
+    tags = {
+    7
+    Name = var . instance_names \[ count . index\]
+    8
+    9
+    10
+    11
+    resource "aws_route53_record" "www" {
+    12
+    #count = 11
+    13
+    count = length(var . instance_names )
+    14
+    zone_id = var . zone_id
+    15
+    name
+    = "${var . instance_names \[count . index\]} . ${var . domain_name}" #interpolation
+    16
+    type
+    =
+    "A"
+    17
+    tt1
+    = 1
+    18
+    records = \[var . instance_names \[count . index\] == "web" ? aws_instance. web\[count . index\] . public_ip : aws_instance . web\[count . index\].
+    private_ip \]
+    19
+    }
+
+[^58]: Local Values
+    v1.6.x (latest) V
+    Hands-on: Try the Simplify Terraform Configuration with Locals tutorial.
+    A local value assigns a name to an expression, so you can use the name multiple times within a
+    module instead of repeating the expression.
+    If you're familiar with traditional programming languages, it can be useful to compare Terraform
+    modules to function definitions:
+    . Input variables are like function arguments.
+    . Output values are like function return values.
+    . Local values are like a function's temporary local variables.
+
+[^59]: EXPLORER
+    count.tf ..\\locals U
+    variables.tf .\\locals U
+    locals.tf U X
+    count.tf .. \\count U
+    Untitled-2 . 4.
+    REPOS
+    terraform > locals > locals.tf > 4: locals > \[e\] ip
+    notes
+    1
+    locals {
+    > roboshop-ansible
+    2
+    name = "sivakumar"
+    3
+    > roboshop-ansible-roles
+    training = "terraform"
+    4
+    > roboshop-documentation
+    instance_type = var . instance_names \[count . index\] == "mongodb" \| \| var . instance_names
+    \[ count . index\] == "mysql" \| \| var . instance_names \[count . index\] == "shipping" ? "t3. small"
+    > roboshop-shell
+    "t2. micro"
+    > shell-script
+    5
+    ip = var . instance_names \[ count . index\] == "web" ? aws_instance. web\[count . index\] . public_ip
+    terraform
+    : aws_instance . web\[ count . index\] . private_ip
+    > conditions
+    6
+    > count
+    locals
+    count.tf
+    U
+    locals.tf
+    U
+
+[^60]: REPOS
+    terraform > locals > count.tf > { resource "aws_route53_record" "www" > \[ \]records
+    > notes
+    1
+    resource "aws_instance" "web" {
+    > roboshop-ansible
+    2
+    #count = 11 # count . index is a special variable given by terraform
+    > roboshop-ansible-roles
+    3
+    count = length (var . instance_names)
+    4
+    ami
+    = var . ami_id #devops-practice
+    > roboshop-documentation
+    5
+    instance_type = local. instance_type
+    > roboshop-shell
+    6
+    tags = {
+    > shell-script
+    7
+    Name = var . instance_names \[ count . index \]
+    terraform
+    8
+    > conditions
+    9
+    > count
+    10
+    11
+    locals
+    resource "aws_route53_record" "www" {
+    12
+    #count = 11
+    count.tf
+    U
+    13
+    count = length(var . instance_names)
+    locals.tf
+    U
+    14
+    zone id = var . zone_id
+    provider.tf
+    U
+    15
+    name
+    = "${var . instance_names \[ count . index\]} . ${var . domain_name}" #interpolation
+    variables.tf
+    U
+    16
+    type
+    = "A"
+    session-01
+    17
+    tt1
+    1
+    > variables
+    18
+    O
+    records = \[local. ipj
+    19
+    .gitignore
+    U
+
+[^61]: terraform > locals > variables.tf > < variable "domain_name"
+    1
+    variable "instance_names" {
+    2
+    type = list
+    3
+    default = \["mongodb", "redis", "mysql", "rabbitmq", "catalogue", "user", "cart", "shipping", "payment", "dispatch", "web"\]
+    4
+    5
+    16
+    variable "ami_id" {
+    7
+    default = "ami-Of3c7d07486cad139"
+    8
+    9
+    10
+    variable "zone_id" {
+    11
+    default = "Z06431971951XUVZELNIC"
+    12
+    13
+    14
+    variable "domain_name" {
+    15
+    default = "chowdarychilukuri. in"
+    16
+    }
+
+[^62]: # aws_route53_record .www \[10\] will be created
+    resource "aws_route53_record" "www" {
+    +
+    allow_overwrite = (known after apply)
+    +
+    fadn
+    (known after apply)
+    +
+    id
+    E
+    (known after apply)
+    +
+    name
+    "web . daws 76s . online"
+    +
+    records
+    (known after apply)
+    +
+    tt1
+    1
+    +
+    type
+    A"
+    +
+    zone_id
+    "Z104317737D96UJVA7NEF"
+    Plan: 22 to add, 0 to change, 0 to destroy
 

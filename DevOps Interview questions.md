@@ -1,12 +1,14 @@
 ﻿---
 title: DevOps Interview questions
 uuid: 534d208e-09f7-11ef-b967-5658f55e0c13
-version: 62
+version: 98
 created: '2024-05-04T14:48:53+05:30'
 tags:
   - devops
   - devops-interview-questions
 ---
+
+1. \
 
 1. **Forward proxy vs Reverse proxy ?**
 
@@ -105,3 +107,42 @@ For example, you may want to restart a service if a task updates the configurati
 but not if the configuration is unchanged Ansible uses handlers to address this use case. 
 Handlers are tasks that only run when notified.
 ```
+
+\
+
+**What is terraform output?**
+
+```
+Terraform output is used to get the information from the created resources. 
+EX. When we created an instance if we need instance ID, AMI ID or any other details from created instance 
+we can get from it in output.
+
+  
+Also terraform output is used to get the information of one resource and provide as input to other resources.
+```
+
+\
+
+**Terraform functions?**
+
+```
+Functions : Terraform has its own function, those we can use it. But we can't create own functions in terraform.
+```
+
+\
+
+**what is local in terraform?**
+
+![1388ebed-4e96-4c0b-96a5-d6ae8a17c597.png|588](https://images.amplenote.com/534d208e-09f7-11ef-b967-5658f55e0c13/1388ebed-4e96-4c0b-96a5-d6ae8a17c597.png) [^1]
+
+[^1]: Local Values
+    v1.6.x (latest) V
+    Hands-on: Try the Simplify Terraform Configuration with Locals tutorial.
+    A local value assigns a name to an expression, so you can use the name multiple times within a
+    module instead of repeating the expression.
+    If you're familiar with traditional programming languages, it can be useful to compare Terraform
+    modules to function definitions:
+    . Input variables are like function arguments.
+    . Output values are like function return values.
+    . Local values are like a function's temporary local variables.
+
