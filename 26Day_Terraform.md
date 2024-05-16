@@ -1,7 +1,7 @@
 ﻿---
 title: 26Day_Terraform
 uuid: 3d5f36c2-11b8-11ef-af96-9a665e06d35f
-version: 903
+version: 924
 created: '2024-05-14T11:37:27+05:30'
 tags:
   - terraform
@@ -17,17 +17,19 @@ tags:
 
     1. *variables overriding*
 
-1. <mark style="background-color:#f8d616;">Conditions -<!-- {"backgroundCycleColor":"25"} --></mark> <mark style="background-color:#f8914d;">we use conditions heavily in terraform<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"offset":1} -->
+1. *<mark style="background-color:#f8d616;">Conditions -<!-- {"backgroundCycleColor":"25"} --></mark> <mark style="background-color:#f8914d;">we use conditions heavily in terraform<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"offset":1} -->
 
-1. <mark style="background-color:#f8d616;">Loops - Two types<!-- {"backgroundCycleColor":"25"} --></mark>
+1. *<mark style="background-color:#f8d616;">Loops - Two types<!-- {"backgroundCycleColor":"25"} --></mark>*
 
-    1. count based loop - Its a terraform concept  <mark style="background-color:#f8914d;">(Launched all instances and created Route53 records)<!-- {"backgroundCycleColor":"24"} --></mark>
+    1. *count based loop - Its a terraform concept  <mark style="background-color:#f8914d;">(Launched all instances and created Route53 records) - useful mostly to iterate lists<!-- {"backgroundCycleColor":"24"} --></mark>*
 
-    1. for each loop
+    1. *for each loop - <mark style="background-color:#f8914d;">useful to iterate maps (this topic is covered in 27Day session)<!-- {"backgroundCycleColor":"24"} --></mark>*
 
-1. <mark style="background-color:#f8d616;">Functions<!-- {"backgroundCycleColor":"25"} --></mark><!-- {"offset":3} -->
+    1. Dynamic loop - *<mark style="background-color:#f8914d;">(this topic is covered in 27Day session)<!-- {"backgroundCycleColor":"24"} --></mark>*
 
-1. <mark style="background-color:#f8d616;">Locals<!-- {"backgroundCycleColor":"25"} --></mark>
+1. *<mark style="background-color:#f8d616;">Functions<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"offset":3} -->
+
+\
 
 \
 
@@ -265,11 +267,11 @@ terraform plan -var-file="roboshop.tfvars" -var="instance_type=t3.medium"
 
 \
 
-<mark style="background-color:#f8914d;">**Conditions :**<!-- {"backgroundCycleColor":"24"} --></mark>
+*<mark style="background-color:#f8914d;">**Conditions :**<!-- {"backgroundCycleColor":"24"} --></mark>*
 
 \
 
-**Syntax:**
+***Syntax:***
 
 ```
 if (expression) {
@@ -288,7 +290,7 @@ else {
 
 \
 
-One line syntax for conditions: terraform will follow this.
+*One line syntax for conditions: terraform will follow this.*
 
 ```
 expression ? "this will run if true" : "this will run if false"
@@ -296,7 +298,7 @@ expression ? "this will run if true" : "this will run if false"
 
 \
 
-<mark style="background-color:#f8d616;">Conditions folder created & provider.tf file created.<!-- {"backgroundCycleColor":"25"} --></mark>
+*<mark style="background-color:#f8d616;">Conditions folder created & provider.tf file created.<!-- {"backgroundCycleColor":"25"} --></mark>*
 
 ```
 terraform {
@@ -317,7 +319,7 @@ provider "aws" {
 
 \
 
-**conditions.tf code**
+***conditions.tf code***
 
 ```
 resource "aws_instance" "web" {
@@ -330,7 +332,7 @@ resource "aws_instance" "web" {
 
 \
 
-**Variables.tf code**
+***Variables.tf code***
 
 ```
 variable "instance_name" {
@@ -356,7 +358,7 @@ terraform init
 
 \
 
-so it selects t3.small instance
+*so it selects t3.small instance*
 
 ```
 terraform plan
@@ -366,7 +368,7 @@ terraform plan
 
 \
 
-But if i change in variables from mongodb to web. so the condition is not true then see the output.
+*But if i change in variables from mongodb to web. so the condition is not true then see the output.*
 
 ```
 variable "instance_name" {
@@ -394,19 +396,19 @@ terraform plan
 
 \
 
-<mark style="background-color:#f8914d;">**Loops**<!-- {"backgroundCycleColor":"24"} --></mark>
+*<mark style="background-color:#f8914d;">**Loops**<!-- {"backgroundCycleColor":"24"} --></mark>*
 
-1.  <mark style="background-color:#f8d616;">Two types<!-- {"backgroundCycleColor":"25"} --></mark>
+1.  *<mark style="background-color:#f8d616;">Two types<!-- {"backgroundCycleColor":"25"} --></mark>*
 
-    1. count based loop - Its a terraform concept
+    1. *count based loop - Its a terraform concept*  
 
-    1. for each loop
+    1. *for each loop*
 
 \
 
-<mark style="background-color:#f8914d;">Count based loop - Its a terraform concept<!-- {"backgroundCycleColor":"24"} --></mark>
+*<mark style="background-color:#f8914d;">Count based loop - Its a terraform concept  - useful mostly to iterate lists<!-- {"backgroundCycleColor":"24"} --></mark>*
 
-<mark style="background-color:#fff;">count folder created & provider.tf file created.<!-- {"backgroundCycleColor":"11"} --></mark>
+*<mark style="background-color:#fff;">count folder created & provider.tf file created.<!-- {"backgroundCycleColor":"11"} --></mark>*
 
 ```
 terraform {
@@ -429,7 +431,7 @@ provider "aws" {
 
 \
 
-**What is terraform output?**
+***What is terraform output?***
 
 ```
 Terraform output is used to get the information from the created resources. 
@@ -439,7 +441,7 @@ we can get from it in output.
 Also terraform output is used to get the information of one resource and provide as input to other resources.
 ```
 
-}![4306e35b-51dc-4aed-98cc-211ce9637fcd.png|699](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/4306e35b-51dc-4aed-98cc-211ce9637fcd.png) [^41]
+*}*![4306e35b-51dc-4aed-98cc-211ce9637fcd.png|699](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/4306e35b-51dc-4aed-98cc-211ce9637fcd.png) [^41]
 
 \
 
@@ -457,17 +459,17 @@ terraform apply -auto-approve
 
 \
 
-<mark style="background-color:#f3de6c;">To check how terraform output comes:<!-- {"backgroundCycleColor":"14"} --></mark>
+*<mark style="background-color:#f3de6c;">To check how terraform output comes:<!-- {"backgroundCycleColor":"14"} --></mark>*
 
 \
 
-count.tf code
+*count.tf code*
 
 ![7db22dcf-2cd5-4f4a-8b2e-767b5694d9e5.png|1163.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/7db22dcf-2cd5-4f4a-8b2e-767b5694d9e5.png) [^44]
 
 \
 
-output.tf code (where to test the output which we requested)
+*output.tf code (where to test the output which we requested)*
 
 ![4a6a12f0-ce63-43a9-8d24-b73981cd0cdc.png|771](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/4a6a12f0-ce63-43a9-8d24-b73981cd0cdc.png) [^45]
 
@@ -481,11 +483,11 @@ terraform init
 terraform apply -auto-approve
 ```
 
-Huge output generated for 11 instances. below is just a sample output.
+*Huge output generated for 11 instances. below is just a sample output.*
 
 ![1e092086-a19e-4f47-a445-c7d7df9cebbc.png|620](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/1e092086-a19e-4f47-a445-c7d7df9cebbc.png) [^46]
 
-Instances created
+*Instances created*
 
 ![9303d6f9-d1a4-45ff-8846-603336c445e3.png|781.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/9303d6f9-d1a4-45ff-8846-603336c445e3.png) [^47]
 
@@ -493,23 +495,23 @@ Instances created
 
 \
 
-<mark style="background-color:#f3de6c;">Here testing usecase is.. create instances & update route53...<!-- {"backgroundCycleColor":"14"} --></mark>
+*<mark style="background-color:#f3de6c;">Here testing usecase is.. create instances & update route53...<!-- {"backgroundCycleColor":"14"} --></mark>*
 
 \
 
-count.tf code
+*count.tf code*
 
 ![de6680d4-650e-421d-8f03-d4d3ce77f4c3.png|888.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/de6680d4-650e-421d-8f03-d4d3ce77f4c3.png) [^48]
 
 \
 
-variables.tf code
+*variables.tf code*
 
 ![8d864c8e-42cd-43c5-bd9f-bb83418ac6dc.png|886.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/8d864c8e-42cd-43c5-bd9f-bb83418ac6dc.png) [^49]
 
 \
 
-output.tf (its commented)
+*output.tf (its commented)*
 
 ![69aac344-076a-4368-9228-1f153e8bf2cd.png|437](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/69aac344-076a-4368-9228-1f153e8bf2cd.png) [^50]
 
@@ -527,13 +529,13 @@ terraform apply -auto-approve
 
 \
 
-All Instances created.. t3.small created for mongodb, mysql, shipping
+*All Instances created.. t3.small created for mongodb, mysql, shipping*
 
 ![4f7e3451-6b7e-4fab-b86f-faf01808dca2.png|852.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/4f7e3451-6b7e-4fab-b86f-faf01808dca2.png) [^53]
 
 \
 
-Route53 records also created, for web public ip assigned.
+*Route53 records also created, for web public ip assigned.*
 
 ![cf34e657-6bae-49ea-9c71-8f24dbb25ae2.png|873.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/cf34e657-6bae-49ea-9c71-8f24dbb25ae2.png) [^54]
 
@@ -545,17 +547,17 @@ terraform destroy -auto-approve
 
 \
 
-<mark style="background-color:#f8914d;">**Functions :**<!-- {"backgroundCycleColor":"24"} --></mark> <mark style="background-color:#f8d616;">**Terraform has its own function, those we can use it. But we can't create own functions in terraform.**<!-- {"backgroundCycleColor":"25"} --></mark>
+*<mark style="background-color:#f8914d;">**Functions :**<!-- {"backgroundCycleColor":"24"} --></mark> <mark style="background-color:#f8d616;">**Terraform has its own function, those we can use it. But we can't create own functions in terraform.**<!-- {"backgroundCycleColor":"25"} --></mark>*
 
 \
 
-We need to give some input -- It will do some work -- It will give some output
+*We need to give some input -- It will do some work -- It will give some output*
 
-N no.of times we can use it.
+*N no.of times we can use it.*
 
 \
 
-[Functions - Configuration Language \| Terraform \| HashiCorp Developer](https://developer.hashicorp.com/terraform/language/functions)    -- useful link for terraform functions lot of options are available
+[*Functions - Configuration Language \| Terraform \| HashiCorp Developer*](https://developer.hashicorp.com/terraform/language/functions)    *-- useful link for terraform functions lot of options are available*
 
  
 
@@ -573,7 +575,7 @@ split(",", "foo,bar,baz"])
 
 \
 
-Here length function is used to calculate the list from **variables.tf,** so if instances increases also count function will take care.
+*Here length function is used to calculate the list from **variables.tf,** so if instances increases also count function will take care.*
 
  ![b2ccf2d5-d88e-43fd-8869-817c48985774.png|932.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/b2ccf2d5-d88e-43fd-8869-817c48985774.png) [^56]
 
@@ -585,33 +587,21 @@ Here length function is used to calculate the list from **variables.tf,** so if 
 
 \
 
-<mark style="background-color:#f8914d;">**Locals**<!-- {"backgroundCycleColor":"24"} --></mark>
+\
 
-Locals is just like variables, but it have some extra capabilities. you can keep functions and expressions inside locals and use them.
+![2cb5695b-c190-4036-8153-488740390991.png|975.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/2cb5695b-c190-4036-8153-488740390991.png) [^58]
 
 \
 
-![238e5293-ea76-46aa-86c4-c037bb273903.png|580](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/238e5293-ea76-46aa-86c4-c037bb273903.png) [^58]
+*count.tf code*
 
-![9c7b4642-72ae-4450-b5a6-1892a4b66853.png|566](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/9c7b4642-72ae-4450-b5a6-1892a4b66853.png)
-
-\
-
-local.tf code
-
-![2cb5695b-c190-4036-8153-488740390991.png|975.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/2cb5695b-c190-4036-8153-488740390991.png) [^59]
+![a4c641b6-0d4d-4e12-977a-9c8996cbd526.png|994.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/a4c641b6-0d4d-4e12-977a-9c8996cbd526.png) [^59]
 
 \
 
-count.tf code
+*variables.tf code*
 
-![a4c641b6-0d4d-4e12-977a-9c8996cbd526.png|994.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/a4c641b6-0d4d-4e12-977a-9c8996cbd526.png) [^60]
-
-\
-
-variables.tf code
-
-![277767b6-6b8a-4ac1-a856-272ba280af15.png|999.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/277767b6-6b8a-4ac1-a856-272ba280af15.png) [^61]
+![277767b6-6b8a-4ac1-a856-272ba280af15.png|999.3333740234375](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/277767b6-6b8a-4ac1-a856-272ba280af15.png) [^60]
 
 \
 
@@ -619,7 +609,7 @@ variables.tf code
 terraform plan
 ```
 
-![eb469bea-2820-49a9-b0c3-14980f6251e5.png|689](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/eb469bea-2820-49a9-b0c3-14980f6251e5.png) [^62]
+![eb469bea-2820-49a9-b0c3-14980f6251e5.png|689](https://images.amplenote.com/3d5f36c2-11b8-11ef-af96-9a665e06d35f/eb469bea-2820-49a9-b0c3-14980f6251e5.png) [^61]
 
 \
 
@@ -2286,18 +2276,7 @@ terraform plan
     19
     }
 
-[^58]: Local Values
-    v1.6.x (latest) V
-    Hands-on: Try the Simplify Terraform Configuration with Locals tutorial.
-    A local value assigns a name to an expression, so you can use the name multiple times within a
-    module instead of repeating the expression.
-    If you're familiar with traditional programming languages, it can be useful to compare Terraform
-    modules to function definitions:
-    . Input variables are like function arguments.
-    . Output values are like function return values.
-    . Local values are like a function's temporary local variables.
-
-[^59]: EXPLORER
+[^58]: EXPLORER
     count.tf ..\\locals U
     variables.tf .\\locals U
     locals.tf U X
@@ -2334,7 +2313,7 @@ terraform plan
     locals.tf
     U
 
-[^60]: REPOS
+[^59]: REPOS
     terraform > locals > count.tf > { resource "aws_route53_record" "www" > \[ \]records
     > notes
     1
@@ -2398,7 +2377,7 @@ terraform plan
     .gitignore
     U
 
-[^61]: terraform > locals > variables.tf > < variable "domain_name"
+[^60]: terraform > locals > variables.tf > < variable "domain_name"
     1
     variable "instance_names" {
     2
@@ -2426,7 +2405,7 @@ terraform plan
     16
     }
 
-[^62]: # aws_route53_record .www \[10\] will be created
+[^61]: # aws_route53_record .www \[10\] will be created
     resource "aws_route53_record" "www" {
     +
     allow_overwrite = (known after apply)

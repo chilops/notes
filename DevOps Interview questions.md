@@ -1,7 +1,7 @@
 ﻿---
 title: DevOps Interview questions
 uuid: 534d208e-09f7-11ef-b967-5658f55e0c13
-version: 98
+version: 104
 created: '2024-05-04T14:48:53+05:30'
 tags:
   - devops
@@ -134,6 +134,12 @@ Functions : Terraform has its own function, those we can use it. But we can't cr
 **what is local in terraform?**
 
 ![1388ebed-4e96-4c0b-96a5-d6ae8a17c597.png|588](https://images.amplenote.com/534d208e-09f7-11ef-b967-5658f55e0c13/1388ebed-4e96-4c0b-96a5-d6ae8a17c597.png) [^1]
+
+\
+
+\
+
+<mark style="background-color:#f8d616;">**What is Terraform state & remote state**<!-- {"backgroundCycleColor":"25"} --></mark>**- <mark style="background-color:#f8914d;">? An IMP concept<!-- {"backgroundCycleColor":"24"} --></mark>** 
 
 [^1]: Local Values
     v1.6.x (latest) V
