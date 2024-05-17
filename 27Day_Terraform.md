@@ -1,7 +1,7 @@
 ﻿---
 title: 27Day_Terraform
 uuid: 37c06422-1337-11ef-bbb0-c6370cefecaf
-version: 641
+version: 643
 created: '2024-05-16T09:18:54+05:30'
 tags:
   - terraform
@@ -19,7 +19,7 @@ tags:
 
     1. *for each loop -  - <mark style="background-color:#f8914d;">useful to iterate maps<!-- {"backgroundCycleColor":"24"} --></mark>*
 
-    1. *Dynamic loop*
+    1. *Dynamic block*
 
 1. *<mark style="background-color:#f8d616;">Terraform state & remote state<!-- {"backgroundCycleColor":"25"} --></mark>- <mark style="background-color:#f8914d;">An IMP concept<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"offset":3} -->
 
@@ -259,7 +259,7 @@ terraform destroy -auto-approve
 
 \
 
-*<mark style="background-color:#f8914d;">**Dynamic loop -** not much use only for understanding<!-- {"backgroundCycleColor":"24"} --></mark>*
+*<mark style="background-color:#f8914d;">**Dynamic block(loop)-** not much use only for understanding<!-- {"backgroundCycleColor":"24"} --></mark>*
 
 \
 
