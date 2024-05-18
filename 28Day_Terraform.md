@@ -1,7 +1,7 @@
 ﻿---
 title: 28Day_Terraform
 uuid: d85dab74-1404-11ef-a737-9a665e06d35f
-version: 407
+version: 960
 created: '2024-05-17T09:50:51+05:30'
 tags:
   - terraform
@@ -13,47 +13,53 @@ tags:
 
 1. *<mark style="background-color:#f8d616;">Multiple environments<!-- {"backgroundCycleColor":"25"} --></mark>*
 
-      1. tfvars
+    1. *tfvars*
 
-      2. workspaces
+    1. *workspaces*
 
-      3. Different Repos completely
+    1. *Different Repos completely*
 
-\
+1. <mark style="background-color:#f8d616;">provisioners<!-- {"backgroundCycleColor":"25"} --></mark><!-- {"offset":1} -->
 
-\
+    1. Local-exec
 
-*<mark style="background-color:#f8914d;">**Multiple environments:**<!-- {"backgroundCycleColor":"24"} --></mark>*
-
-\
-
-How to create multiple environments with terraform? There are multiple ways
-
-      1. tfvars
-
-      2. workspaces
-
-      3. Different Repos completely
+    1. remote-exec
 
 \
 
-# <mark style="background-color:#f8914d;">**tfvars**<!-- {"backgroundCycleColor":"24"} --></mark>
+\
+
+# *<mark style="background-color:#f8914d;">**Multiple environments:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 \
 
-create a new repo - **terraform-multi-env**
+*How to create multiple environments with terraform? There are multiple ways*
+
+      *1. tfvars*
+
+      *2. workspaces*
+
+      *3. Different Repos completely*
+
+\
+
+# *<mark style="background-color:#f8914d;">**tfvars**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
+
+\
+
+*create a new repo - **terraform-multi-env***
 
 ![d0b7341b-d34b-4e11-8ff8-d56a9af085e7.png|913.3333740234375](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/d0b7341b-d34b-4e11-8ff8-d56a9af085e7.png) [^1]
 
 \
 
-Also new folder in VS - **terraform-multi-env**
+*Also new folder in VS - **terraform-multi-env***
 
 ![773e5217-1674-4373-abc9-0c0de65187a6.png|803](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/773e5217-1674-4373-abc9-0c0de65187a6.png) [^2]
 
 \
 
-subfolder -tfvars
+*subfolder -tfvars*
 
 ![](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/6f758922-631a-4bad-841e-8766f10eb04a.png) [^3]
 
@@ -65,7 +71,7 @@ subfolder -tfvars
 
 \
 
-Create separate folders for dev & prod environments
+*Create separate folders for dev & prod environments*
 
 ![](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/9bd3b01b-d60b-4275-b465-d79bd3ccea84.png) [^5]
 
@@ -73,13 +79,13 @@ Create separate folders for dev & prod environments
 
 \
 
-Create different S3 buckets to maintain state for development, UAT, Testing, PROD.
+*Create different S3 buckets to maintain state for development, UAT, Testing, PROD.*
 
 \
 
-[**chilops-terraform-s3-dev**](https://us-east-1.console.aws.amazon.com/s3/buckets/chilops-terraform-s3-dev?region=us-east-1&bucketType=general)     -- Bucket for development
+[***chilops-terraform-s3-dev***](https://us-east-1.console.aws.amazon.com/s3/buckets/chilops-terraform-s3-dev?region=us-east-1&bucketType=general)     *-- Bucket for development*
 
-[**chilops-terraform-s3-prod**](https://us-east-1.console.aws.amazon.com/s3/buckets/chilops-terraform-s3-prod?region=us-east-1&bucketType=general)   -- Bucket for production 
+[***chilops-terraform-s3-prod***](https://us-east-1.console.aws.amazon.com/s3/buckets/chilops-terraform-s3-prod?region=us-east-1&bucketType=general)   *-- Bucket for production* 
 
 \
 
@@ -87,7 +93,7 @@ Create different S3 buckets to maintain state for development, UAT, Testing, PRO
 
 \
 
-creating DynamoDB - table creation for locking
+*creating DynamoDB - table creation for locking*
 
 \
 
@@ -97,9 +103,9 @@ creating DynamoDB - table creation for locking
 
 \
 
-[**chilops-locking-dev**](https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#table?name=chilops-locking-dev)     -- locking table for Dev
+[***chilops-locking-dev***](https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#table?name=chilops-locking-dev)     *-- locking table for Dev*
 
-[**chilops-locking-prod**](https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#table?name=chilops-locking-prod)   -- locking table for Prod 
+[***chilops-locking-prod***](https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#table?name=chilops-locking-prod)   *-- locking table for Prod* 
 
 ![83179178-1a34-4c3c-b341-7ceeb43e5020.png|845.3333740234375](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/83179178-1a34-4c3c-b341-7ceeb43e5020.png) [^8]
 
@@ -107,7 +113,7 @@ creating DynamoDB - table creation for locking
 
 \
 
-Under Dev - backend.tf code
+*Under Dev - backend.tf code*
 
 ```
 bucket = "chilops-terraform-s3-dev"
@@ -118,13 +124,13 @@ dynamodb_table = "chilops-locking-dev"
 
 \
 
-<mark style="background-color:#f8914d;">**IMP node: for every terraform project use different keyname "mulitenv" else it will merge... any name is fine**<!-- {"backgroundCycleColor":"24"} --></mark>
+*<mark style="background-color:#f8914d;">**IMP node: for every terraform project use different keyname "mulitenv" else it will merge... any name is fine**<!-- {"backgroundCycleColor":"24"} --></mark>*
 
 ![20925e84-fdc8-42a4-bf7d-fce01435286f.png|807](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/20925e84-fdc8-42a4-bf7d-fce01435286f.png) [^9]
 
 \
 
-Under prod - backend.tf code
+*Under prod - backend.tf code*
 
 \
 
@@ -141,19 +147,19 @@ dynamodb_table = "chilops-locking-prod"
 
 \
 
-data.tf code
+*data.tf code*
 
 ![d452b6f9-7173-40db-af54-5a28051bbaf3.png|785](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/d452b6f9-7173-40db-af54-5a28051bbaf3.png) [^11]
 
 \
 
-roboshop.tf code   -- In this code **startwith function** is used.
+*roboshop.tf code   -- In this code **startwith function** is used.*
 
 ![280317df-f9b8-44b4-a714-8b88c0fe907b.png|844](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/280317df-f9b8-44b4-a714-8b88c0fe907b.png) [^12]
 
 \
 
-under dev - **dev.tfvars code**
+*under dev - **dev.tfvars code***
 
 ```
 instance_names = {
@@ -171,7 +177,7 @@ instance_names = {
 
 \
 
-under prod - **prod.tfvars code**
+*under prod - **prod.tfvars code***
 
 ```
 instance_names = {
@@ -187,13 +193,13 @@ instance_names = {
 
 \
 
-provider.tf code
+*provider.tf code*
 
 ![08e21dcb-b023-423b-9715-1652852baf83.png|821.3333740234375](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/08e21dcb-b023-423b-9715-1652852baf83.png) [^15]
 
 \
 
-variables.tf code
+*variables.tf code*
 
 ![38bf8c41-28f1-4330-84d1-a2914583aec1.png|786](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/38bf8c41-28f1-4330-84d1-a2914583aec1.png) [^16]
 
@@ -219,7 +225,7 @@ terraform plan -var-file=dev/dev.tfvars
 
 \
 
-**Dev** instances are created:
+***Dev** instances are created:*
 
 ![d6a8715f-da55-4ab5-87a6-765d36d5f9d9.png|797.3333740234375](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/d6a8715f-da55-4ab5-87a6-765d36d5f9d9.png) [^20]
 
@@ -233,11 +239,11 @@ terraform plan -var-file=dev/dev.tfvars
 
 \
 
-Now doing same in **PROD** environment: " -reconfigure needs to be used when we start doing in other environments like PROD, UAT etc
+*Now doing same in **PROD** environment: " -reconfigure needs to be used when we start doing in other environments like PROD, UAT etc*
 
 \
 
-<mark style="background-color:#f8d616;">I**MP: we are switching to different envronments from dev to prod or prod to UAT then every time we need to reinitialize using**<!-- {"backgroundCycleColor":"25"} --></mark> <mark style="background-color:#f8914d;">**-reconfigure**<!-- {"backgroundCycleColor":"24"} --></mark>
+*<mark style="background-color:#f8d616;">I**MP: we are switching to different envronments from dev to prod or prod to UAT then every time we need to reinitialize using **<!-- {"backgroundCycleColor":"25"} --></mark><mark style="background-color:#f8914d;">**-reconfigure**<!-- {"backgroundCycleColor":"24"} --></mark>*
 
 ```
 terraform init -reconfigure -backend-config=prod/backend.tf
@@ -267,7 +273,7 @@ terraform apply -var-file=prod/prod.tfvars
 
 \
 
-Now PROD instances launched & running
+*Now PROD instances launched & running*
 
 \
 
@@ -275,9 +281,9 @@ Now PROD instances launched & running
 
 \
 
-To destroy DEV & PROD env
+*To destroy DEV & PROD env*
 
-<mark style="background-color:#f8d616;">I**MP: we are switching to different envronments from dev to prod or prod to UAT then every time we need to reinitialize using**<!-- {"backgroundCycleColor":"25"} --></mark> <mark style="background-color:#f8914d;">**-reconfigure**<!-- {"backgroundCycleColor":"24"} --></mark>
+*<mark style="background-color:#f8d616;">I**MP: we are switching to different envronments from dev to prod or prod to UAT then every time we need to reinitialize using **<!-- {"backgroundCycleColor":"25"} --></mark><mark style="background-color:#f8914d;">**-reconfigure**<!-- {"backgroundCycleColor":"24"} --></mark>*
 
 ```
 terraform destroy -var-file=prod/prod.tfvars
@@ -289,9 +295,325 @@ terraform destroy -var-file=dev/dev.tfvars
 
 \
 
+*E:\\AWSDevOps\\Repos\\terraform-multi-env\\tfvars\\.terraform\\providers\\registry.terraform.io\\hashicorp\\aws\\5.31.0\\windows_amd64\\terraform-provider-aws_v5.31.0_x5.exe*
+
 \
 
-# <mark style="background-color:#f8914d;">**workspaces**<!-- {"backgroundCycleColor":"24"} --></mark>
+**pros** --  Same code
+
+**cons** -- Same code for multiple env, you need to be very careful because whatever changes you do that will apply to prod
+
+\
+
+# *<mark style="background-color:#f8914d;">**workspaces**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
+
+Terraform workspace is to manage multiple deployments/environments with same code.
+
+It only supports few backends only(S3 bucket is one if it)
+
+![e503861f-7533-4b89-914a-c927594c813a.png|584](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/e503861f-7533-4b89-914a-c927594c813a.png) [^26]
+
+\
+
+```
+terraform workspace
+```
+
+![2b226e0f-bb16-4e43-92bc-eb837b4ff354.png|574](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/2b226e0f-bb16-4e43-92bc-eb837b4ff354.png) [^27]
+
+\
+
+Create workspace folder and ec2.tf code
+
+lookup(function) - we use this function in a map we pass a key to bring the value
+
+![8ecb2d96-edda-4cf0-a084-8a806605b2f5.png|536](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/8ecb2d96-edda-4cf0-a084-8a806605b2f5.png) [^28]
+
+![46decd07-19de-41c1-913c-fa12386b10d1.png|840](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/46decd07-19de-41c1-913c-fa12386b10d1.png) [^29]
+
+\
+
+provider.tf code -- **chilops-terraform-remotestate** is S3 bucket name( DynamoDB file table also created) Also change the key name(any new name is fine)
+
+![c1126449-7c56-4900-8148-8b3dc3019a7a.png|842.3333740234375](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/c1126449-7c56-4900-8148-8b3dc3019a7a.png) [^30]
+
+\
+
+variable.tf code
+
+![4755cf75-ed74-4b98-b330-bc62f7be7271.png|847](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/4755cf75-ed74-4b98-b330-bc62f7be7271.png) [^31]
+
+\
+
+Now we need to create workspace:
+
+```
+cd workspaces
+```
+
+```
+terraform init
+```
+
+![](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/c76c781a-a4c1-4702-bdb6-509033fab5f0.png) [^32]
+
+```
+terraform workspace list
+terraform workspace new dev
+  
+terraform plan
+```
+
+![b16d2c0f-9e17-4107-bc87-72134727df25.png|655](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/b16d2c0f-9e17-4107-bc87-72134727df25.png) [^33]
+
+![4c95e6d4-b223-4688-b805-a529fad9e333.png|797](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/4c95e6d4-b223-4688-b805-a529fad9e333.png) [^34]
+
+\
+
+under S3 bucket dev workspace created:
+
+![d19d5ca4-67a6-4081-8ec2-7022eebb0f78.png|933.3333740234375](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/d19d5ca4-67a6-4081-8ec2-7022eebb0f78.png) [^35]
+
+\
+
+```
+terraform workspace new prod
+```
+
+![b6da1035-9d65-4386-91c4-a0115229b1eb.png|839](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/b6da1035-9d65-4386-91c4-a0115229b1eb.png) [^36]
+
+\
+
+Now two different workspaces created - One for DEV, One for PROD
+
+![b563d9fe-4b08-425b-88f9-e7908ea35549.png|838.3333740234375](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/b563d9fe-4b08-425b-88f9-e7908ea35549.png) [^37]
+
+\
+
+To check in which workspace we are currently working
+
+```
+terraform workspace show
+```
+
+![e44839d7-d48b-434c-9c72-f10ae3909cbb.png|687](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/e44839d7-d48b-434c-9c72-f10ae3909cbb.png) [^38]
+
+\
+
+To see how many workspaces are present.
+
+```
+terraform workspace list
+```
+
+![a8874172-a11b-4529-a465-42700331549f.png|689](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/a8874172-a11b-4529-a465-42700331549f.png) [^39]
+
+\
+
+since we are in prod env. then it should select t3.small instance
+
+```
+terraform plan
+```
+
+![75148254-9086-4ef1-9ba3-36bffb258876.png|760](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/75148254-9086-4ef1-9ba3-36bffb258876.png) [^40]
+
+\
+
+Now to move to DEV workspace:
+
+```
+terraform workspace select dev
+```
+
+![e81f6db1-8fac-4c59-a3c2-33f2bf6b304d.png|736](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/e81f6db1-8fac-4c59-a3c2-33f2bf6b304d.png) [^41]
+
+\
+
+Now it will show t2.micro instance
+
+```
+terraform plan
+```
+
+![16bebd80-6826-46f8-b5e5-7c0d50b9ea17.png|723](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/16bebd80-6826-46f8-b5e5-7c0d50b9ea17.png) [^42]
+
+\
+
+**pros** --   Same code
+
+**cons** --  Same code for multiple env, you need to be very careful because whatever changes you do that will apply to prod.
+
+Also, Terraform is maintaining same bucket that may cause errors and difficult to maintain, difficult to maintain variables.
+
+\
+
+**Note: so compared to workspaces & tfvars... better one is tfvars.**
+
+\
+
+# *<mark style="background-color:#f8914d;">**Different Repos completely**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
+
+**pros** -- Since everything diff, you no need to worry
+
+**cons** -- Code duplication, you need to maintain 2 repos
+
+\
+
+<mark style="background-color:#f8d616;">Note: if it crucial/big enterprise project then different Repos is the right approach compared to other two, since will have crystal clear separation prod code separate & dev code separate.<!-- {"backgroundCycleColor":"25"} --></mark>
+
+\
+
+\
+
+# <mark style="background-color:#f8914d;">**provisioners**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
+
+Two types of provisioners
+
+1. Local-exec  -- It's where you running the terraform command (its my current laptop)<!-- {"indent":1} -->
+
+    1. remote-exec  -- This will run inside the server.
+
+Provisioners is only for EC2 instances
+
+\
+
+\
+
+# <mark style="background-color:#f8914d;">**Local-exec**<!-- {"backgroundCycleColor":"24"} --></mark> 
+
+Local-exec - It's where you running the terraform command (its my current laptop or server)
+
+\
+
+ec2.tf code under new folder
+
+![bd45f0a5-12e5-4444-8ac8-88e5f46df3bc.png|925.3333740234375](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/bd45f0a5-12e5-4444-8ac8-88e5f46df3bc.png) [^43]
+
+\
+
+provider.tf code
+
+![ea22d187-9f19-4b7d-b49f-97bb849244f1.png|925.3333740234375](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/ea22d187-9f19-4b7d-b49f-97bb849244f1.png) [^44]
+
+\
+
+```
+cd terraform-provisioners/
+terraform init
+```
+
+![fba42f65-430d-4715-88f3-0c1269f8820a.png|725](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/fba42f65-430d-4715-88f3-0c1269f8820a.png) [^45]
+
+\
+
+Creating an instance and printing the <mark style="background-color:#f8d616;">**private-ip**<!-- {"backgroundCycleColor":"25"} --></mark>
+
+```
+terraform apply -auto-approve
+```
+
+![514c8d12-3195-40a1-960e-2569facffd4b.png|721](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/514c8d12-3195-40a1-960e-2569facffd4b.png) [^46]
+
+![ed0c256e-9d5e-4b1d-b7b4-50b70aa75775.png|815](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/ed0c256e-9d5e-4b1d-b7b4-50b70aa75775.png) [^47]
+
+```
+terraform destroy -auto-approve
+```
+
+![56447c6f-6601-4b71-9a03-4a980fe8756a.png|951](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/56447c6f-6601-4b71-9a03-4a980fe8756a.png) [^48]
+
+\
+
+<mark style="background-color:#f3de6c;">Note: Provisioners are useful to integrate terraform with configuration management tools like ansible<!-- {"backgroundCycleColor":"14"} --></mark>
+
+server creation is nothing but infrastructure creation... TERRAFORM
+
+server configuration is nothing but configuration management.. ANSIBLE
+
+\
+
+<mark style="background-color:#f3de6c;">Note: If we can integrate terraform & ansible then its a end to end automation. we can integrate using provisioners.<!-- {"backgroundCycleColor":"14"} --></mark>
+
+\
+
+**creation time** --  This local exec will run when server is created
+
+**destroy time** -- At the time of destroy
+
+\
+
+This can be useful to send an email when server is created or destroyed.
+
+\
+
+ec2.tf updated code to check when creation & destroyed.
+
+![c5f24916-437f-497b-8d09-16537ec8ed10.png|900.3333740234375](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/c5f24916-437f-497b-8d09-16537ec8ed10.png) [^49]
+
+\
+
+server created, but ansible-play book command failed due to we are running locally and ansible play book is not installed.
+
+```
+terraform apply -auto-approve
+```
+
+![8d4f09bb-26c4-44a7-90df-dd135b88e5e9.png|896](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/8d4f09bb-26c4-44a7-90df-dd135b88e5e9.png) [^50]
+
+\
+
+\
+
+```
+terraform destroy -auto-approve
+```
+
+![9dc1a38e-a971-4a0d-9ece-11ffc254f871.png|897.3333740234375](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/9dc1a38e-a971-4a0d-9ece-11ffc254f871.png) [^51]
+
+---
+
+\
+
+# <mark style="background-color:#f8914d;">**remote-exec**<!-- {"backgroundCycleColor":"24"} --></mark>
+
+remote-exec  -- This will run inside the server.
+
+\
+
+1\. first you should connect to server
+
+2\. then you can run anything inside the server
+
+\
+
+ec2.tf updated code
+
+![c18a4f84-e15f-4dbc-861f-0b8cec66621e.png|997.3333740234375](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/c18a4f84-e15f-4dbc-861f-0b8cec66621e.png) [^52]
+
+![39af6aec-4b0a-42e1-87f6-e7dbd3baa453.png|479](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/39af6aec-4b0a-42e1-87f6-e7dbd3baa453.png) [^53]
+
+\
+
+Now here it will directly connect to server and **install NGINX software and start the services**
+
+```
+terraform apply -auto-approve
+```
+
+![7c09365d-5cba-40e0-95dc-99c210ffead8.png|715](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/7c09365d-5cba-40e0-95dc-99c210ffead8.png) [^54]
+
+\
+
+nginx is working on server:
+
+![f5e856d1-2f93-4db8-a6c5-58240661f495.png|994.3333740234375](https://images.amplenote.com/d85dab74-1404-11ef-a737-9a665e06d35f/f5e856d1-2f93-4db8-a6c5-58240661f495.png) [^55]
+
+\
+
+```
+terraform destroy -auto-approve
+```
 
 [^1]: G
     https://github.com/new
@@ -1253,4 +1575,1059 @@ terraform destroy -var-file=dev/dev.tfvars
     cpu_threads_per_core
     E
     (known after apply)
+
+[^26]: workspaces
+    terraform. workspace --> dev
+    terraform. workspace --> prod
+
+[^27]: PS E: \\AWSDevOps \\Repos \\terraform-multi-env> terraform workspace
+    Usage: terraform \[global options\] workspace
+    new, list, show, select and delete Terraform workspaces.
+    Subcommands :
+    delete
+    Delete a workspace
+    list
+    List Workspaces
+    new
+    Create a new workspace
+    select
+    Select a workspace
+    show
+    Show the name of the current workspace
+    PS E: \\AWSDevops \\Repos \\terraform-multi-env>
+
+[^28]: lookup Function
+    lookup retrieves the value of a single element from a map, given its key.
+    If the given key does not exist, the given default value is returned instead.
+    lookup (map, key, default)
+    Copy
+
+[^29]: REPOS
+    terraform-multi-env > workspaces > ec2.tf > $ resource "aws_instance" "web"
+    > Ansible
+    1
+    resource "aws_instance" "web" {
+    Concepts
+    2
+    ami
+    = "ami -Of3c7d07486cad139" #devops-practice
+    3
+    Ansible.MD
+    M
+    instance_type = lookup (var . instance_type, terraform. workspace)
+    4
+    image-1.png
+    5
+    tags = {
+    image.png
+    6
+    Name = "HelloTerraform"
+    {} person.json
+    M
+    7
+    }
+    person.xml
+    8
+    ! person.yaml
+    > notes
+    > Robosho-shellscripts
+    M
+    > roboshop-ansible
+    > roboshop-ansible-roles
+    > shellscripts
+    > terraform
+    v terraform-multi-env
+    > tfvars
+    workspaces
+    data.tf
+    C
+    ec2.tf
+    C
+    provider.tf
+    C
+    variables.tf
+    C
+    .gitignore
+
+[^30]: REPOS
+    terraform-multi-env > workspaces > provider.tf > { terraform > $ backend "s3" > \[. key
+    > Ansible
+    1
+    terraform {
+    Concepts
+    2
+    required_providers {
+    3
+    Ansible.MD
+    M
+    aws = {
+    4
+    source = "hashicorp/aws"
+    image-1.png
+    5
+    version = "5.31.0" # AWS provider version, not terraform version
+    image.png
+    6
+    {} person.json
+    M
+    7
+    person.xml
+    8
+    ! person.yaml
+    19
+    backend "s3" {
+    10
+    notes
+    bucket = "chilops-terraform-remotestate"
+    11
+    > Robosho-shellscripts
+    key
+    = "workspace"
+    M
+    12
+    region = "us-east-1"
+    > roboshop-ansible
+    13
+    dynamodb_table = "chilops-locking"
+    > roboshop-ansible-roles
+    14
+    }
+    > shellscripts
+    15
+    > terraform
+    16
+    v terraform-multi-env
+    17
+    provider "aws" {
+    18
+    > tfvars
+    region = "us-east-1"
+    19
+    workspaces
+    data.tf
+    U
+    ec2.tf
+    U
+    provider.tf
+    U
+    variables.tf
+    U
+    .gitignore
+
+[^31]: V REPOS
+    terraform-multi-env > workspaces > variables.tf > @ variable "instance_type"
+    > Ansible
+    1
+    variable "instance_type" {
+    Concepts
+    2
+    default = {
+    3
+    Ansible.MD
+    dev = "t2.micro"
+    M
+    4
+    prod = "t3. small"
+    image-1.png
+    15
+    image.png
+    6
+    {} person.json
+    M
+    person.xml
+    ! person.yaml
+    > notes
+    > Robosho-shellscripts
+    M
+    > roboshop-ansible
+    > roboshop-ansible-roles
+    > shellscripts
+    > terraform
+    v terraform-multi-env
+    > tfvars
+    workspaces
+    data.tf
+    ec2.tf
+    C CC
+    provider.tf
+    variables.tf
+    U
+    .gitignore
+
+[^32]: chowd@Chowdary MINGW64 /e/AWSDevops /Repos/terraform-multi-env/workspaces (main)
+    $ terraform init
+    Initializing the backend. ..
+    Successfully configured the backend "s3"! Terraform will automatically
+    use this backend unless the backend configuration changes.
+    Initializing provider plugins. . .
+    Finding hashicorp/aws versions matching "5. 31.0"...
+    Installing hashicorp/aws v5 . 31.0. .
+    Installed hashicorp/aws v5. 31.0 (signed by Hashicorp)
+    Terraform has created a lock file . terraform. lock.hc1 to record the provider
+    selections it made above. Include this file in your version control repository
+    so that Terraform can guarantee to make the same selections by default when
+    you run "terraform init" in the future.
+    Terraform has been successfully initialized!
+    You may now begin working with Terraform. Try running "terraform plan" to see
+    any changes that are required for your infrastructure. Al1 Terraform commands
+    should now work.
+    If you ever set or change modules or backend configuration for Terraform,
+    rerun this command to reinitialize your working directory. If you forget, other
+    commands will detect it and remind you to do so if necessary.
+    chowd@Chowdary MINGW64 /e/AWSDevops /Repos/terraform-multi-env/workspaces (main)
+
+[^33]: chowd@chowdary MINGW64 /e/AWSDevops /Repos/terraform-multi-env/workspaces (main)
+    $ terraform workspace list
+    \*
+    default
+
+[^34]: chowd@chowdary MINGW64 /e/AWSDevops /Repos/terraform-multi-env/workspaces (main)
+    $ terraform workspace new dev
+    Created and switched to workspace "dev"!
+    You're now on a new, empty workspace. Workspaces isolate their state,
+    so if you run "terraform plan" Terraform will not see any existing state
+    for this configuration.
+    chowd@Chowdary MINGW64 /e/AWSDevops /Repos /terraform-multi-env/workspaces (main)
+    $
+
+[^35]: Amazon S3 > Buckets > chilops-terraform-remotestate >
+    env:/ > dev/ > workspace
+    workspace Info
+    Copy S3 URI
+    Download
+    Open \[
+    Object actions
+    Properties
+    Permissions
+    Versions
+    Object overview
+    Owner
+    S3 URI
+    chilukuridevops
+    $3://chilops-terraform-remotestate/env:/dev/workspace
+    AWS Region
+    Amazon Resource Name (ARN)
+    US East (N. Virginia) us-east-1
+    7 arn:aws:$3::chilops-terraform-remotestate/env:/dev/workspace
+    Last modified
+    May 18, 2024, 10:31:21 (UTC+05:30)
+    Entity tag (Etag)
+    793ba20df1281d3669416229068469bf2
+    Size
+    180.0 B
+    Object URL
+    Type
+    (https://chilops-terraform-remotestate.s3.amazonaws.com/env%3A/dev/w
+    orkspace
+    Key
+    env:/dev/workspace
+    Object management overview
+    The following bucket properties and object management configurations impact the behavior of this object.
+
+[^36]: chowd@chowdary MINGW64 /e/AWSDevops /Repos /terraform-multi-env/workspaces (main)
+    $ terraform workspace new prod
+    Created and switched to workspace "prod"!
+    You're now on a new, empty workspace. Workspaces isolate their state,
+    so if you run "terraform plan" Terraform will not see any existing state
+    for this configuration.
+    chowd@chowdary MINGW64 /e/AWSDevops /Repos /terraform-multi-env/workspaces (main)
+    $
+
+[^37]: Amazon S3 > Buckets > chilops-terraform-remotestate > env:/
+    env:/
+    Copy $3 URI
+    Objects
+    Properties
+    Objects (2) Info
+    C
+    Copy S3 URI
+    Copy URL
+    Download
+    Open \[
+    Delete
+    Actions
+    Create folder
+    Upload
+    Objects are the fundamental entities stored in Amazon $3. You can use Amazon S3 inventory \[ to get a list of all objects in your bucket. For others to access your objects, you'll need to
+    explicitly grant them permissions. Learn more
+    Find objects by prefix
+    1
+    O
+    Name
+    Type
+    4
+    Last modified
+    4
+    Size
+    Storage class
+    O
+    dev/
+    Folder
+    \[ prod/
+    Folder
+
+[^38]: chowd@chowdary MINGW64 /e/AWSDevops/Repos/terraform-multi-env/workspaces (main)
+    $ terraform workspace show
+    prod
+    chowd@chowdary MINGW64 /e/AWSDevops/Repos/terraform-multi-env/workspaces (main)
+    $
+
+[^39]: chowd@chowdary MINGW64 /e/AWSDevops/Repos/terraform-multi-env/workspaces (main)
+    $ terraform workspace list
+    default
+    dev
+    prod
+
+[^40]: Terraform will perform the following actions:
+    # aws_instance.web will be created
+    +
+    resource "aws_instance" "web" {
+    ami
+    =
+    "ami -Of 3c7 d07486cad139"
+    arn
+    (known after apply)
+    +
+    associate_public_ip_address
+    E
+    (known after apply)
+    availability_zone
+    E
+    (known after apply)
+    cpu_core_count
+    (known after apply)
+    cpu_threads_per_core
+    (known after apply)
+    disable_api_stop
+    (known after apply)
+    disable_api_termination
+    (known after apply)
+    ebs_optimized
+    (known after apply)
+    get_password_data
+    false
+    host_id
+    = (known after apply)
+    +
+    host_resource_group_arn
+    (known after apply)
+    +
+    i am_instance_profile
+    (known after apply)
+    +
+    id
+    =
+    (known after apply)
+    +
+    instance_initiated_shutdown_behavior
+    II
+    (known after apply)
+    instance_lifecycle
+    E
+    (known after apply)
+    instance_state
+    E
+    (known after apply)
+    instance_type
+    "t3. small"
+    +
+    ipv6_address_count
+    (known after apply)
+    +
+    ipv6_addresses
+    E
+    (known after apply)
+    +
+    key_name
+    E
+    (known after apply)
+    +
+    monitoring
+    E
+    (known after apply)
+
+[^41]: chowd@chowdary MINGW64 /e/AWSDevops /Repos/terraform-multi-env/workspaces (main)
+    $ terraform workspace select dev
+    Switched to workspace "dev".
+    chowd@chowdary MINGW64 /e/AWSDevops /Repos/terraform-multi-env/workspaces (main)
+    $
+
+[^42]: Terraform will perform the following actions :
+    # aws_instance. web will be created
+    +
+    resource "aws_instance" "web" {
+    ami
+    =
+    "ami-Of 3c7d07486cad139"
+    +
+    arn
+    = (known after apply)
+    associate_public_ip_address
+    (known after apply)
+    availability_zone
+    (known after apply)
+    +
+    cpu_core_count
+    E
+    (known after apply)
+    cpu_threads_per_core
+    E
+    (known after apply)
+    +
+    disable_api_stop
+    = (known after apply)
+    disable_api_termination
+    (known after apply)
+    ebs_optimized
+    (known after apply)
+    +
+    get_password_data
+    = false
+    host_id
+    = (known after apply)
+    host_resource_group_arn
+    = (known after apply)
+    +
+    i am_instance_profile
+    (known after apply)
+    +
+    id
+    (known after apply)
+    +
+    instance_initiated_shutdown_behavior
+    =
+    (known after apply)
+    +
+    instance_lifecycle
+    E
+    (known after apply)
+    +
+    instance_state
+    (known after apply)
+    +
+    instance_type
+    E
+    "t2. micro"
+    ipv6_address_count
+    (known after apply)
+    +
+    ipv6_addresses
+    E
+    (known after apply)
+    +
+    key_name
+    (known after apply)
+    monitoring
+    (known after apply)
+
+[^43]: V REPOS
+    terraform-provisioners > ec2.tf > 4 resource "aws_instance" "web" > 4: provisioner "local-exec" > \[\] command
+    > Ansible
+    1
+    resource "aws_instance" "web" {
+    Concepts
+    2
+    ami
+    = "ami -Of3c7d07486cad139" #devops-practice
+    3
+    Ansible.MD
+    M
+    instance_type = "t2.micro"
+    4
+    image-1.png
+    15
+    tags = {
+    image.png
+    6
+    Name = "Provisioner"
+    {} person.json
+    M
+    7
+    person.xml
+    8
+    ! person.yaml
+    9
+    provisioner "local-exec" {
+    > notes
+    10
+    command = "echo this is server IP ${self . private_IP}" # self = aws_instance . web
+    11
+    > Robosho-shellscripts
+    M
+    12
+    > roboshop-ansible
+    > roboshop-ansible-roles
+    > shellscripts
+    > terraform
+    > terraform-multi-env
+    terraform-provisioners
+    ec2.tf
+    U
+    provider.tf
+    U
+
+[^44]: REPOS
+    terraform-provisioners > provider.tf > > provider "aws"
+    > Ansible
+    1
+    terraform {
+    v Concepts
+    2
+    required_providers {
+    3
+    Ansible.MD
+    M
+    aws = {
+    4
+    source = "hashicorp/aws"
+    image-1.png
+    5
+    version = "5.31.0" # AWS provider version, not terraform version
+    image.png
+    16
+    {} person.json
+    M
+    7
+    person.xml
+    8
+    ! person.yaml
+    9
+    backend "s3" {
+    10
+    > notes
+    bucket = "chilops-terraform-remotestate"
+    11
+    > Robosho-shellscripts
+    key
+    = "provisioner"
+    M
+    12
+    region = "us-east-1"
+    > roboshop-ansible
+    13
+    dynamodb_table = "chilops-locking"
+    > roboshop-ansible-roles
+    14
+    }
+    > shellscripts
+    15
+    > terraform
+    16
+    > terraform-multi-env
+    17
+    provider "aws" {
+    18
+    v terraform-provisioners
+    region = "us-east-1"
+    19
+    ec2.tf
+    provider.tf
+    U
+
+[^45]: chowd@Chowdary MINGW64 /e/AWSDevops /Repos/terraform-provisioners (main)
+    $ terraform init
+    Initializing the backend. ..
+    Successfully configured the backend "s3"! Terraform will automatically
+    use this backend unless the backend configuration changes.
+    Initializing provider plugins . . .
+    Finding hashicorp/aws versions matching "5. 31.0". ..
+    Installing hashicorp/aws v5 . 31.0. .
+    Installed hashicorp/aws v5. 31.0 (signed by Hashicorp)
+    Terraform has created a lock file . terraform. lock.hc1 to record the provider
+    selections it made above. Include this file in your version control repository
+    so that Terraform can guarantee to make the same selections by default when
+    you run "terraform init" in the future.
+    Terraform has been successfully initialized!
+    You may now begin working with Terraform. Try running "terraform plan" to see
+    any changes that are required for your infrastructure. Al1 Terraform commands
+    should now work.
+    If you ever set or change modules or backend configuration for Terraform,
+    rerun this command to reinitialize your working directory. If you forget, other
+    commands will detect it and remind you to do so if necessary.
+    chowd@chowdary MINGW64 /e/AWSDevops/Repos/terraform-provisioners (main)
+    ST
+
+[^46]: $ terraform apply -auto-approve
+    Acquiring state lock. This may take a few moments . . .
+    Terraform used the selected providers to generate the following execution
+    plan. Resource actions are indicated with the following symbols:
+    + create
+    Terraform will perform the following actions:
+    # aws_instance. web will be created
+    resource "aws_instance" "web" {
+    ami
+    E
+    "ami-Of 3c7d07486cad139"
+    +
+    arn
+    (known after apply)
+    +
+    associate_public_ip_address
+    (known after apply)
+    availability_zone
+    (known after apply)
+    cpu_core_count
+    E
+    (known after apply)
+    cpu_threads_per_core
+    (known after apply)
+    disable_api_stop
+    E
+    (known after apply)
+    disable_api_termination
+    (known after apply)
+    ebs_optimized
+    (known after apply)
+    get_password_data
+    false
+    host_id
+    E
+    (known after apply)
+    host_resource_group_arn
+    (known after apply)
+    +
+    i am_instance_profile
+    (known after apply)
+    id
+    (known after apply)
+    instance_initiated_shutdown_behavior
+    (known after apply)
+    instance_lifecycle
+    (known after apply)
+    instance_state
+    E
+    (known after apply)
+    +
+    instance_type
+    "t2 . micro"
+    ipv6_address_count
+    =
+    (known after apply)
+    ipv6 addresses
+    (known after apply)
+
+[^47]: Plan: 1 to add, 0 to change, 0 to destroy.
+    aws_instance . web: Creating. . .
+    aws_instance . web: Still creating. . .
+    \[10s elapsed\]
+    aws_instance . web: Still creating. . .
+    \[20s elapsed\]
+    aws_instance . web: Still creating. . .
+    \[30s elapsed\]
+    aws_instance .web: Provisioning with 'local-exec'..
+    aws_instance . web (local-exec): Executing: \["cmd" "/C" "echo this is server IP 172. 31. 27. 178"\]
+    aws_instance . web (local-exec): this is server IP 172. 31. 27. 178
+    aws_instance . web: Creation complete after 37s \[id=i-032b350a290cd6c09\]
+    Releasing state lock. This may take a few moments . . .
+
+[^48]: $ terraform destroy -auto-approve
+    Acquiring state lock. This may take a few moments.
+    aws_instance . web: Refreshing state. . . \[id=i-032b350a290cd6c09\]
+    Terraform used the selected providers to generate the following execution
+    plan. Resource actions are indicated with the following symbols:
+    - destroy
+    Terraform will perform the following actions:
+    # aws_instance . web will be destroyed
+    resource "aws_instance" "web" {
+    ami
+    "ami-Of 3c7 d07486cad139" -> null
+    arn
+    "arn : aws : ec2 :us-east-1: 158724841371: instance/i-032b350a290cd6c09"
+    -
+    associate_public_ip_address
+    false -> null
+    -
+    availability_zone
+    E
+    "us-east-1d"
+    -> null
+
+[^49]: EXPLORER
+    provider.tf terraform-provisioners U .
+    = terraform-provider-aws_v5.31.0_x5.exe
+    ec2.tf .\\workspaces
+    ec2.tf terraform-provisioners U .
+    variables.tf .. \\workspaces
+    REPOS
+    terraform-provisioners > \\ec2.tf > { resource "aws_instance" "web" > $ provisioner "local-exec" > @ command
+    > Ansible
+    1
+    resource "aws_instance" "web" {
+    Concepts
+    N
+    ami
+    = "ami -Of3c7d07486cad139" #devops-practice
+    13
+    Ansible.MD
+    M
+    instance_type = "t2.micro"
+    4
+    image-1.png
+    15
+    tags = {
+    image.png
+    6
+    Name = "Provisioner"
+    {} person.json
+    M
+    7
+    person.xml
+    18
+    person.yaml
+    9
+    provisioner "local-exec" {
+    > notes
+    command = "echo this will execute at the time of creation, you can trigger other system like email and sending alerts" # self =
+    > Robosho-shellscripts
+    M
+    aws_instance . web
+    11
+    }
+    > roboshop-ansible
+    12
+    provisioner "local-exec" {
+    > roboshop-ansible-roles
+    13
+    command = "echo ${self.private_ip} > inventory" # self = aws_instance. web
+    > shellscripts
+    14
+    > terraform
+    15
+    > terraform-multi-env
+    16
+    # provisioner "local-exec" {
+    17
+    v terraform-provisioners
+    D
+    command = "ansible-playbook -i inventory web . yaml" # self = aws_instance . web
+    18
+    # }
+    v .terraform
+    19
+    > providers
+    20
+    provisioner "local-exec" {
+    {} terraform.tfstate
+    U
+    21
+    when = destroy
+    E.terraform.lock.hcl
+    U
+    22
+    command = "echo this will execute at the time of destroy, you can trigger other system like email and sending alerts" # self =
+    ec2.tf
+    U
+    aws_instance . web
+    provider.tf
+    23
+    U
+    24
+
+[^50]: aws_instance . web: Provisioning with 'local-exec
+    aws_instance . web (local-exec): Executing: \["cmd" "/C" "echo 172. 31.16.57 > inventory"\]
+    aws_instance . web: Provisioning with 'local-exec'
+    aws_instance . web (local-exec): Executing: \["cmd" "/C" "ansible-playbook -i inventory web. yam1"\]
+    aws_instance. web (local-exec): 'ansible-playbook' is not recognized as an internal or external command,
+    aws_instance . web (local-exec): operable program or batch file.
+    Error: local-exec provisioner error
+    with aws_instance. web,
+    on ec2. tf line 17, in resource "aws_instance" "web":
+    17:
+    provisioner "local-exec" {
+    Error running command 'ansible-playbook -i inventory web. yaml' : exit status
+    1. Output: ' ansible-playbook' is not recognized as an internal or external
+    command ,
+    operable program or batch file.
+
+[^51]: null
+    volume_type
+    = "gp2" -> null
+    (1 unchanged attribute hidden)
+    Plan: 0 to add, 0 to change, 1 to destroy.
+    aws_instance . web: Destroying. . . \[id=i-05b4ab86592622coe\]
+    aws_instance . web: Provisioning with 'local-exec'.
+    aws_instance . web (local-exec) : Executing: \["cmd" "/C" "echo this will execute at the time of destroy, you can trigger other system like email and sending alerts"\]
+    aws_instance . web (local-exec) : this will execute at the time of destroy, you can trigger other system like email and sending alerts
+    aws_instance . web: Still destroying. .. \[id=i-05b4ab86592622c0e, 10s elapsed\]
+
+[^52]: terraform-provisioners > ec2.tf > $ resource "aws_instance" "web"
+    1
+    resource "aws_instance" "web" {
+    ami
+    "ami -Of3c7d07486cad139" #devops-practice
+    IA W N
+    instance_type = "t2.micro"
+    vpc_security_group_ids = \[aws_security_group . roboshop-all. id\]
+    tags = {
+    Name = "provisioner"
+    8
+    9
+    10
+    provisioner "local-exec" {
+    11
+    command = "echo this will execute at the time of creation, you can trigger other system like email and sending alerts" # self =
+    aws_instance . web
+    12
+    13
+    14
+    provisioner "local-exec" {
+    15
+    command = "echo ${self. private_ip} > inventory" # self = aws_instance. web
+    16
+    17
+    18
+    # provisioner "local-exec" {
+    19
+    command = "ansible-playbook -i inventory web . yam1" # self = aws_instance. web
+    20
+    21
+    provisioner "local-exec" {
+    23
+    when = destroy
+    command = "echo this will execute at the time of destroy, you can trigger other system like email and sending alerts" # self =
+    aws_instance . web
+    26
+    27
+    connection {
+    28
+    type
+    "ssh"
+    29
+    user
+    "centos"
+    30
+    password = "Devops321"
+    31
+    post
+    = self. public_ip
+    33
+    34
+    provisioner "remote-exec" {
+    35
+    inline = \[
+    36
+    "echo 'this is from remote exec' > /tmp/remote. txt",
+    37
+    "sudo yum install nginx -y",
+    38
+    "sudo systemctl start nginx"
+    39
+    40
+    41
+    42
+    Ln 1, Col 1 Spaces: 2 UTF-8 CRLF
+
+[^53]: 42
+    43
+    resource "aws_security_group" "roboshop-all" {
+    44
+    name
+    = "provisioner"
+    45
+    46
+    ingress {
+    47
+    description
+    = "Allow All ports"
+    48
+    from_port
+    = 22
+    49
+    to_port
+    = 22
+    50
+    protocol
+    = "tcp"
+    51
+    cidr_blocks
+    = \["0.0.0.0/0"\]
+    52
+    LP
+    53
+    54
+    ingress {
+    55
+    description
+    "Allow All ports"
+    56
+    from_port
+    80
+    57
+    to_port
+    =
+    80
+    58
+    protocol
+    =
+    "tcp"
+    59
+    cidr_blocks
+    = \["0.0.0.0/0"\]
+    60
+    61
+    62
+    egress {
+    63
+    from_port
+    64
+    to_port
+    65
+    protocol
+    11-1"
+    66
+    cidr_blocks
+    = \["0.0.0.0/0"\]
+    67
+    68
+    69
+    tags = {
+    70
+    Name = "provisioner"
+    71
+    72
+
+[^54]: aws_instance . web (remote-exec) :
+    Target Platform: unix
+    aws_instance . web: Still creating. . .
+    \[40s elapsed\]
+    aws_instance . web: Still creating. .. \[50s elapsed\]
+    aws_instance . web (remote-exec) : Connecting to remote host via SSH. . .
+    aws_instance . web (remote-exec) :
+    Host: 100.26. 54. 165
+    aws_instance . web
+    (remote-exec) :
+    User: centos
+    aws_instance . web
+    (remote-exec) :
+    Password: true
+    aws_instance . web
+    (remote-exec) :
+    Private key: false
+    aws_instance . web
+    (remote-exec) :
+    Certificate: false
+    aws_instance . web
+    (remote-exec) :
+    SSH Agent: false
+    aws_instance . web
+    (remote-exec) :
+    Checking Host Key: false
+    aws_instance . web (remote-exec) :
+    Target Platform: unix
+    aws_instance . web (remote-exec) : Connected!
+    aws_instance . web: Still creating. .. \[1mos elapsed\]
+    aws_instance . web (remote-exec) : Centos
+    B/S
+    0
+    B
+    ETA
+    aws_instance . web (remote-exec): Centos
+    ---
+    B/S
+    O B
+    --: -- ETA
+    aws_instance . web (remote-exec): Centos
+    36 MB/S
+    11 MB
+    00: 00 ETA
+    aws_instance . web (remote-exec): Centos
+    25 MB/S
+    28 MB
+    00 : 01
+    aws_instance . web: Still creating. .. \[1m10s elapsed\]
+    aws_instance . web: Still creating. .. \[1m20s elapsed\]
+    aws_instance . web (remote-exec) : Centos
+    B/S
+    0
+    B
+    ETA
+    aws_instance . web (remote-exec): Centos
+    ---
+    B/S
+    O B
+    -- : -- ETA
+    aws_instance . web (remote-exec) : Centos
+    15 MB /S
+    10 MB
+    00: 00
+    aws_instance . web (remote-exec) : Centos
+    B/S
+    O B
+    --: --
+    ETA
+    aws_instance . web (remote-exec) : Centos
+    79 KB/S
+    18 KB
+    00: 00
+    aws_instance . web (remote-exec) : Centos
+    B/S
+    O B
+    --: --
+    ETA
+    aws_instance . web (remote-exec) : Centos
+    102 KB/s
+    7.7 KB
+    00: 00
+    aws_instance . web (remote-exec) : Extra P ---
+    B/S
+    O B
+    --: --
+    ETA
+    aws_instance .web (remote-exec) : Extra P 33 MB/s
+    14 MB
+    00:00
+    aws_instance . web: Still creating. .. \[1m30s elapsed\]
+    aws_instance . web (remote-exec) : Dependencies resolved.
+    aws_instance .web (remote-exec) : =
+    aws_instance . web (remote-exec) :
+    Package
+    aws_instance . web (remote-exec) :
+    Arch
+    Version
+    Repo
+    Size
+    aws_instance . web (remote-exec) :
+    aws_instance . web (remote-exec): Installing:
+    aws_instance . web (remote-exec) :
+    nginx
+    aws_instance . web (remote-exec) :
+    x86_64 1:1. 14.1-9. module_e18. 0. 0+1060+3ab382d3
+    aws_instance . web (remote-exec) :
+    appstream 570 k
+    aws_instance . web (remote-exec): Installing dependencies:
+    aws_instance . web (remote-exec) :
+    dejavu-fonts -common
+    aws_instance .web (remote-exec) :
+    noarch 2.35-7. e18
+    baseos
+    74 k
+    aws_instance . web (remote-exec) :
+    dejavu-sans-fonts
+    aws_instance . web (remote-exec) :
+    noarch 2. 35-7. e18
+    baseos
+    1.6 M
+    aws_instance . web (remote-exec) :
+    fontconfig
+    aws_instance . web (remote-exec) :
+    x86_64 2. 13.1-4.e18 baseos
+    274 k
+    aws_instance . web (remote-exec) :
+    fontpackages-filesystem
+    aws_instance . web (remote-exec) :
+    noarch 1. 44-22. e18
+    baseos
+    16 k
+
+[^55]: C
+    Not secure 100.26.54.165
+    Welcome to nginx on Red Hat Enterprise Linux!
+    This page is used to test the proper operation of the nginx HTTP server after it has been installed. If you can read this page, it means that the web server installed at this site is working properly.
+    Website Administrator
+    This is the default index. html page that is distributed with nginx on Red Hat Enterprise Linux. It is located in /usr/ share/nginx/html.
+    You should now put your content in a location of your choice and edit the root configuration directive in the nginx configuration file /etc/nginx/nginx. conf.
+    For information on Red Hat Enterprise Linux, please visit the Red Hat, Inc. website. The documentation for Red Hat Enterprise Linux is available on the Red Hat, Inc. website.
+    NGINX
+    POWERED BY
+    redhat.
 

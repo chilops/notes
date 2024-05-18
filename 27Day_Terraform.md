@@ -1,7 +1,7 @@
 ﻿---
 title: 27Day_Terraform
 uuid: 37c06422-1337-11ef-bbb0-c6370cefecaf
-version: 643
+version: 647
 created: '2024-05-16T09:18:54+05:30'
 tags:
   - terraform
@@ -27,7 +27,7 @@ tags:
 
 \
 
-*<mark style="background-color:#f8914d;">**Locals**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Locals**<!-- {"backgroundCycleColor":"24"} --></mark>*
 
 *Locals is just like variables, but it have some extra capabilities. you can keep functions and expressions inside locals and use them.*
 
