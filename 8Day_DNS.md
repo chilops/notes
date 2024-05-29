@@ -1,7 +1,7 @@
 ﻿---
 title: 8Day_DNS
 uuid: c912cef4-0e93-11ef-bf19-a6f126245c9e
-version: 51
+version: 55
 created: '2024-05-10T11:38:55+05:30'
 tags:
   - roboshop-project-manual
@@ -30,7 +30,7 @@ our domain **chowdarychilukuri.in** is being secured. Get ready to go online!  
 
  
 
-<mark style="background-color:#f8914d;">**DNS - Domain Name System**<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**DNS - Domain Name System**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
 ![50f28b34-312f-480d-87ec-931fc265a4fd.png|742.3333740234375](https://images.amplenote.com/c912cef4-0e93-11ef-bf19-a6f126245c9e/50f28b34-312f-480d-87ec-931fc265a4fd.png) [^2]
 
@@ -68,7 +68,7 @@ our domain **chowdarychilukuri.in** is being secured. Get ready to go online!  
 
  
 
-<mark style="background-color:#f8914d;">**Buying a Domain in Hostinger**<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**Buying a Domain in Hostinger**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
  
 

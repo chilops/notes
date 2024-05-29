@@ -1,7 +1,7 @@
 ﻿---
 title: 19Day_Ansible
 uuid: 093c26a8-0f6e-11ef-b475-a6f126245c9e
-version: 248
+version: 286
 created: '2024-05-11T13:41:14+05:30'
 tags:
   - ansible
@@ -39,7 +39,7 @@ tags:
 
 \
 
-*<mark style="background-color:#f8914d;">**How playbook works: Multi-playbooks**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**How playbook works: Multi-playbooks**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -103,7 +103,7 @@ ansible-playbook -i inventory.ini -e ansible_user=centos -e ansible_password=Dev
 
  
 
-***variables***
+# ***variables***<!-- {"collapsed":true} -->
 
 *--------------------*
 
@@ -119,7 +119,7 @@ ansible-playbook -i inventory.ini -e ansible_user=centos -e ansible_password=Dev
 
  
 
-***Play level variables:***
+# ***Play level variables***<!-- {"collapsed":true} -->
 
 *YAML code:*
 
@@ -163,7 +163,7 @@ ansible-playbook -i inventory.ini -e ansible_user=centos -e ansible_password=Dev
 
   
 
-***Task level variables:***
+# ***Task level variables***<!-- {"collapsed":true} -->
 
  
 
@@ -211,7 +211,7 @@ ansible-playbook -i inventory.ini -e ansible_user=centos -e ansible_password=Dev
 
  
 
-*<mark style="background-color:#f8d616;">**Variables from files:**<!-- {"backgroundCycleColor":"25"} --></mark>*
+# *<mark style="background-color:#f8d616;">**Variables from files:**<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -261,7 +261,7 @@ ansible-playbook -i inventory.ini -e ansible_user=centos -e ansible_password=Dev
 
  
 
-*<mark style="background-color:#f8d616;">**Variables from prompt**:<!-- {"backgroundCycleColor":"25"} --></mark>*
+# *<mark style="background-color:#f8d616;">**Variables from prompt**:<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -305,7 +305,7 @@ ansible-playbook -i inventory.ini -e ansible_user=centos -e ansible_password=Dev
 
  
 
-*<mark style="background-color:#f8d616;">**Variables from Inventory**:<!-- {"backgroundCycleColor":"25"} --></mark>*
+# *<mark style="background-color:#f8d616;">**Variables from Inventory**:<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -355,7 +355,7 @@ ansible-playbook -i inventory.ini -e ansible_user=centos -e ansible_password=Dev
 
  
 
-*<mark style="background-color:#f8d616;">**Variables from Arguments**:<!-- {"backgroundCycleColor":"25"} --></mark>*
+# *<mark style="background-color:#f8d616;">**Variables from Arguments**:<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -401,7 +401,7 @@ git pull
 
  
 
-*<mark style="background-color:#f8d616;">**Variables 1st preferences - from different locations -inventory, cmd, files, args**:<!-- {"backgroundCycleColor":"25"} --></mark>*
+# *<mark style="background-color:#f8d616;">**Variables 1st preferences - from different locations -inventory, cmd, files, args**:<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -463,7 +463,7 @@ ansible-playbook -i inventory.ini -e ansible_user=centos -e ansible_password=Dev
 
 \
 
-*<mark style="background-color:#f8914d;">**Data Types**:<!-- {"backgroundCycleColor":"24"} --></mark> not much preference in scripting - shell, ansible etc*
+# *<mark style="background-color:#f8914d;">**Data Types**:<!-- {"backgroundCycleColor":"24"} --></mark> not much preference in scripting - shell, ansible etc*<!-- {"collapsed":true} -->
 
  
 
@@ -529,7 +529,7 @@ ansible-playbook -i inventory.ini -e ansible_user=centos -e ansible_password=Dev
 
  
 
-*<mark style="background-color:#f8914d;">**Conditions**:<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Conditions**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -609,7 +609,7 @@ id roboshop 
 
  
 
-*<mark style="background-color:#f8914d;">**Loops** :   <!-- {"backgroundCycleColor":"24"} --></mark><mark style="background-color:#f8d616;">this can be used when we are trying to installing multiple packages etc..<!-- {"backgroundCycleColor":"25"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Loops** :   <!-- {"backgroundCycleColor":"24"} --></mark><mark style="background-color:#f8d616;">this can be used when we are trying to installing multiple packages etc..<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -653,7 +653,7 @@ ansible-playbook -i inventory.ini -e ansible_user=centos -e ansible_password=Dev
 
  
 
-***Installing packages using loops:***
+# ***Installing packages using loops:***<!-- {"collapsed":true} -->
 
  
 
@@ -699,7 +699,7 @@ ansible-playbook -i inventory.ini -e ansible_user=centos -e ansible_password=Dev
 
  
 
-*<mark style="background-color:#f8914d;">**Advanced loops - Installing & uninstalling packages** :<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Advanced loops - Installing & uninstalling packages**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 

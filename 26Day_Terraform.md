@@ -1,7 +1,7 @@
 ﻿---
 title: 26Day_Terraform
 uuid: 3d5f36c2-11b8-11ef-af96-9a665e06d35f
-version: 924
+version: 948
 created: '2024-05-14T11:37:27+05:30'
 tags:
   - terraform
@@ -35,7 +35,7 @@ tags:
 
 \
 
-*<mark style="background-color:#f8914d;">Variables & datatype in Terraform:<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Variables & datatype in Terraform**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 \
 
@@ -167,7 +167,7 @@ terraform destroy -auto-approve
 
 \
 
-1. *<mark style="background-color:#f8914d;">**If variable not declared**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"indent":1} -->
+# *<mark style="background-color:#f8914d;">**If variable not declared**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *Commented as below*
 
@@ -185,7 +185,7 @@ terraform plan
 
 \
 
-*<mark style="background-color:#f8914d;">**variables overriding**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**variables overriding**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *<mark>**terraform.tfvars is used to overwrite the default values in variable.tf file.**</mark>*
 
@@ -267,7 +267,7 @@ terraform plan -var-file="roboshop.tfvars" -var="instance_type=t3.medium"
 
 \
 
-*<mark style="background-color:#f8914d;">**Conditions :**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Conditions**<!-- {"backgroundCycleColor":"24"} --></mark> <mark style="background-color:#f8d616;">-<!-- {"backgroundCycleColor":"25"} --></mark> <mark style="background-color:#f8914d;">we use conditions heavily in terraform<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 \
 
@@ -396,7 +396,7 @@ terraform plan
 
 \
 
-*<mark style="background-color:#f8914d;">**Loops**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Loops**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 1.  *<mark style="background-color:#f8d616;">Two types<!-- {"backgroundCycleColor":"25"} --></mark>*
 
@@ -406,7 +406,7 @@ terraform plan
 
 \
 
-*<mark style="background-color:#f8914d;">Count based loop - Its a terraform concept  - useful mostly to iterate lists<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Count based loop** - Its a terraform concept  - useful mostly to iterate lists<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *<mark style="background-color:#fff;">count folder created & provider.tf file created.<!-- {"backgroundCycleColor":"11"} --></mark>*
 
@@ -547,7 +547,7 @@ terraform destroy -auto-approve
 
 \
 
-*<mark style="background-color:#f8914d;">**Functions :**<!-- {"backgroundCycleColor":"24"} --></mark> <mark style="background-color:#f8d616;">**Terraform has its own function, those we can use it. But we can't create own functions in terraform.**<!-- {"backgroundCycleColor":"25"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Functions :**<!-- {"backgroundCycleColor":"24"} --></mark> <mark style="background-color:#f8d616;">**Terraform has its own function, those we can use it. But we can't create own functions in terraform.**<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"collapsed":true} -->
 
 \
 

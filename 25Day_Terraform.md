@@ -1,7 +1,7 @@
 ﻿---
 title: 25Day_Terraform
 uuid: 0cc27282-10e5-11ef-8a05-2e40d90dfe07
-version: 949
+version: 976
 created: '2024-05-13T10:25:41+05:30'
 tags:
   - terraform
@@ -19,13 +19,13 @@ tags:
 
 1. *<mark style="background-color:#f8d616;">Variables in Terraform<!-- {"backgroundCycleColor":"25"} --></mark>*
 
-1. <mark style="background-color:#f8914d;">.gitignore file<!-- {"backgroundCycleColor":"24"} --></mark>  
+1. *<mark style="background-color:#f8914d;">.gitignore file  <!-- {"backgroundCycleColor":"24"} --></mark>*
 
 \
 
 \
 
-*<mark style="background-color:#f8914d;">**Ansible, shell advantages & disadvantages**<!-- {"backgroundCycleColor":"24"} --></mark>* 
+# *<mark style="background-color:#f8914d;">**Ansible, shell advantages & disadvantages**<!-- {"backgroundCycleColor":"24"} --></mark>* <!-- {"collapsed":true} -->
 
 *Ansible - Its a configuration management (configuration as a code)*
 
@@ -43,7 +43,7 @@ tags:
 
 \
 
-*<mark style="background-color:#f8914d;">**Terraform intro** -<!-- {"backgroundCycleColor":"24"} --></mark> <mark style="background-color:#fff;">Its popular for Infrastructure as code<!-- {"backgroundCycleColor":"11"} --></mark>* 
+# *<mark style="background-color:#f8914d;">**Terraform intro** -<!-- {"backgroundCycleColor":"24"} --></mark> <mark style="background-color:#fff;">Its popular for Infrastructure as code<!-- {"backgroundCycleColor":"11"} --></mark>* <!-- {"collapsed":true} -->
 
 \
 
@@ -101,7 +101,7 @@ tags:
 
 \
 
-*<mark style="background-color:#f8914d;">**Terraform setup along with AWS CLI**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Terraform setup along with AWS CLI**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 1. *Download terraform*
 
@@ -215,7 +215,7 @@ git remote add origin git@github.com:chilops/terraform.git
 
 \
 
-*<mark style="background-color:#f8914d;">**Let us create one EC2 instance using terraform:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Let us create one EC2 instance using terraform**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 \
 
@@ -446,7 +446,7 @@ terraform destroy
 
 \
 
-Instance destroyed now
+*Instance destroyed now*
 
 ![4c607726-2547-417a-b320-fab7f62e4e8b.png|958](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/4c607726-2547-417a-b320-fab7f62e4e8b.png) [^45]
 
@@ -454,7 +454,7 @@ Instance destroyed now
 
 \
 
-*<mark style="background-color:#f8d616;">Variables in Terraform:<!-- {"backgroundCycleColor":"25"} --></mark>*
+# *<mark style="background-color:#f8d616;">**Variables in Terraform**<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"collapsed":true} -->
 
 \
 
@@ -498,7 +498,7 @@ terraform apply
 terraform destroy
 ```
 
-or
+*or*
 
 ```
 terraform destroy -auto-approve
@@ -512,29 +512,29 @@ terraform destroy -auto-approve
 
 \
 
-**string** -- names ex: group, satya, aws
+***string** -- names ex: group, satya, aws*
 
-**Number** -- 0, 123, 00.22 
+***Number** -- 0, 123, 00.22* 
 
-**Boolean** -- true or false
+***Boolean** -- true or false*
 
-**List** -- As below example
+***List** -- As below example*
 
 ![dd935b0c-fe7f-4266-8c4c-9754e258e3cb.png|159](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/dd935b0c-fe7f-4266-8c4c-9754e258e3cb.png) [^51]
 
 \
 
-**Map**  -- example starts with {flower braces as below}
+***Map**  -- example starts with {flower braces as below}*
 
 ![ac544f4d-260d-4df7-a3b7-c7cf65d1df7e.png|627](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/ac544f4d-260d-4df7-a3b7-c7cf65d1df7e.png) [^52]
 
-**Using variables.tf code**
+***Using variables.tf code***
 
 ![d8625c04-f5d4-4d2c-96d2-3330a452df56.png|866](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/d8625c04-f5d4-4d2c-96d2-3330a452df56.png) [^53]
 
 \
 
-Updated EC2 & security code with variables
+*Updated EC2 & security code with variables*
 
 ![171f3365-b16a-4bbd-8d14-1c9218e8b385.png|993.3333740234375](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/171f3365-b16a-4bbd-8d14-1c9218e8b385.png) [^54]
 
@@ -548,7 +548,7 @@ terraform plan
 terraform apply -auto-approve
 ```
 
-or
+*or*
 
 ```
 terraform apply
@@ -572,7 +572,7 @@ terraform destroy -auto-approve
 
 \
 
-<mark style="background-color:#f8914d;">.gitignore file<!-- {"backgroundCycleColor":"24"} --></mark>  -- it will ignore .tfstate files and other files, else you can't push to github due to big size datas.
+# *<mark style="background-color:#f8914d;">.gitignore file  <!-- {"backgroundCycleColor":"24"} --></mark>-- it will ignore .tfstate files and other files, else you can't push to github due to big size data.*<!-- {"collapsed":true} -->
 
 \
 
@@ -588,7 +588,7 @@ git status
 git add . ; git commit -m "gitignore"; git push origin main
 ```
 
-![44663c31-5b7e-45ce-bf82-1538d65539bd.png|868.3333740234375](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/44663c31-5b7e-45ce-bf82-1538d65539bd.png)
+![44663c31-5b7e-45ce-bf82-1538d65539bd.png|868.3333740234375](https://images.amplenote.com/0cc27282-10e5-11ef-8a05-2e40d90dfe07/44663c31-5b7e-45ce-bf82-1538d65539bd.png) [^60]
 
 [^1]: C registry.terraform.io/browse/providers
     Terraform
@@ -2394,4 +2394,10 @@ git add . ; git commit -m "gitignore"; git push origin main
     . terraformrc
     34
     terraform. rc
+
+[^60]: session1/
+    nothing added to commit but untracked files present (use "git add" to track)
+    PS E: \\AWSDevops \\Repos \\terraform> git add . ; git commit -m "gitignore"; git push origin main
+    warning: in the working copy of 'session1/EC2/. terraform. lock.hcl', LF will be replaced by CRLF the next time Git touches it
+    \[main (root-commit) 024f12b\] gitignore
 

@@ -1,7 +1,7 @@
 ﻿---
 title: 17Day_Shell Scripting
 uuid: 3aa3bd3e-0f67-11ef-af7b-a6f126245c9e
-version: 154
+version: 169
 created: '2024-05-11T12:52:30+05:30'
 tags:
   - shell
@@ -28,7 +28,7 @@ tags:
 
 \
 
-*<mark style="background-color:#f8914d;">**Crontab - auto scheduler - Its is used for scheduling scripts**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Crontab - auto scheduler - Its is used for scheduling scripts**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -123,7 +123,7 @@ tail -f /var/log/cron  
 
  
 
- *<mark style="background-color:#f8914d;">**Shellscripts optargs**:<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Shellscripts optargs**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -205,7 +205,7 @@ sh 18.greeting.sh -n satya -w "good evening"
 
  
 
-*<mark style="background-color:#f8914d;">**To run script as normal commands**:<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**To run script as normal commands**:<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -219,7 +219,7 @@ sh 18.greeting.sh -n satya -w "good evening"
 
 \
 
-*<mark style="background-color:#f8914d;">**AWS instances, route 53 records automation: Using AWS CLI**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**AWS instances, route 53 records automation: Using AWS CLI**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *------------------------------------------*
 
@@ -389,7 +389,7 @@ sh 18.greeting.sh -n satya -w "good evening"
 
 \
 
-*<mark style="background-color:#f8914d;">**Creating an access Key**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Creating an access Key**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -543,7 +543,7 @@ aws ec2 run-instances --image-id ami-0f3c7d07486cad139 --instance-type t2.micro 
 
 \
 
-*<mark style="background-color:#f8914d;">**Roboshop instances creation & creating/updating route53 records using Shellscripts**:<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Roboshop instances creation & creating/updating route53 records using Shellscripts**:<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 

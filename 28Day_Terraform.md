@@ -1,7 +1,7 @@
 ﻿---
 title: 28Day_Terraform
 uuid: d85dab74-1404-11ef-a737-9a665e06d35f
-version: 960
+version: 976
 created: '2024-05-17T09:50:51+05:30'
 tags:
   - terraform
@@ -480,7 +480,7 @@ Provisioners is only for EC2 instances
 
 \
 
-# <mark style="background-color:#f8914d;">**Local-exec**<!-- {"backgroundCycleColor":"24"} --></mark> 
+# <mark style="background-color:#f8914d;">**Local-exec**<!-- {"backgroundCycleColor":"24"} --></mark> <!-- {"collapsed":true} -->
 
 Local-exec - It's where you running the terraform command (its my current laptop or server)
 
@@ -573,9 +573,7 @@ terraform destroy -auto-approve
 
 ---
 
-\
-
-# <mark style="background-color:#f8914d;">**remote-exec**<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**remote-exec**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
 remote-exec  -- This will run inside the server.
 

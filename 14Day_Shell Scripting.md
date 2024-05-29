@@ -1,7 +1,7 @@
 ﻿---
 title: 14Day_Shell Scripting
 uuid: f0a73d34-0f55-11ef-af7b-a6f126245c9e
-version: 138
+version: 173
 created: '2024-05-11T10:48:45+05:30'
 tags:
   - shell
@@ -32,7 +32,7 @@ tags:
 
  
 
-1. *<mark style="background-color:#f8914d;">**Using loops install any no of packages**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Using loops install any no of packages**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -86,7 +86,7 @@ git pull
 
  
 
-1. ***Echo $?***
+# *<mark style="background-color:#f8914d;">**Echo $?**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *Exit status 0 - successful/installed*
 
@@ -122,7 +122,7 @@ git pull
 
  
 
-1. *<mark style="background-color:#f8914d;">**Packages installation using shellscripts**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Packages installation using shellscripts**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ![91bc2d3c-a711-404b-a665-0db4d1adb951.png|664](https://images.amplenote.com/f0a73d34-0f55-11ef-af7b-a6f126245c9e/91bc2d3c-a711-404b-a665-0db4d1adb951.png) [^4]
 
@@ -150,7 +150,7 @@ git pull
 
  
 
-1. *<mark style="background-color:#f8914d;">**Roboshop-shellscripts**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Roboshop-shellscripts**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -178,7 +178,7 @@ git pull
 
  
 
-*MongoDB with shellscripts*
+# *<mark style="background-color:#f8914d;">**MongoDB with shellscripts**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -244,7 +244,7 @@ git add . ; git commit -m "added mongodb roboshop shellscripts"; git push origin
 
  
 
-*SED Editor - streamline editor --> it is useful when you write any scripts & modifies file in background without opening. It’s a temporary editor*
+# *SED Editor - streamline editor --> it is useful when you write any scripts & modifies file in background without opening. It’s a temporary editor*<!-- {"collapsed":true} -->
 
  
 
@@ -336,7 +336,7 @@ sed -e '/learning/ d' passwd    --> d --denotes deletion of a word
 
  
 
-*MongoDB full script & execution*
+# *MongoDB full script & execution*<!-- {"collapsed":true} -->
 
 ![046ca235-48b4-4294-a207-36b6ef110f0c.png|652](https://images.amplenote.com/f0a73d34-0f55-11ef-af7b-a6f126245c9e/046ca235-48b4-4294-a207-36b6ef110f0c.png) [^24]
 
@@ -382,7 +382,7 @@ netstat -lntp    --> shows mongodb is running
 
  
 
-*<mark style="background-color:#f8914d;">Catalogue full script & execution<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">Catalogue full script & execution<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *Below is the script*
 

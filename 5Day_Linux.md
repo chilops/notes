@@ -1,7 +1,7 @@
 ﻿---
 title: 5Day_Linux
 uuid: f669d486-0e86-11ef-bfd1-2e40d90dfe07
-version: 219
+version: 245
 created: '2024-05-10T10:07:08+05:30'
 tags:
   - linux
@@ -25,7 +25,7 @@ tags:
 
 \
 
-*<mark style="background-color:#f8914d;">**Putty**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Putty**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *username*
 
@@ -107,7 +107,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">**Super Putty **<!-- {"backgroundCycleColor":"24"} --></mark>--> from putty extension to putty  (In background super putty uses putty only)*
+# *<mark style="background-color:#f8914d;">**Super Putty **<!-- {"backgroundCycleColor":"24"} --></mark>--> from putty extension to putty  (In background super putty uses putty only)*<!-- {"collapsed":true} -->
 
  
 
@@ -117,7 +117,7 @@ tags:
 
  
 
-*WINSCP --> connecting instance using winscp*
+# *<mark style="background-color:#f8914d;">**WINSCP**<!-- {"backgroundCycleColor":"24"} --></mark> --> connecting instance using winscp*<!-- {"collapsed":true} -->
 
 ![57ff8973-cbc1-4000-841e-3fbfcb5e1ce9.png|753.3333740234375](https://images.amplenote.com/f669d486-0e86-11ef-bfd1-2e40d90dfe07/57ff8973-cbc1-4000-841e-3fbfcb5e1ce9.png) [^12]
 
@@ -129,7 +129,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">**NGINX:  creating a static webpages (for resume, portfolio etc)**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**NGINX:  creating a static webpages (for resume, portfolio etc)**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -259,7 +259,7 @@ systemctl restart nginx
 
  
 
-***Linux Filesystem structure***
+# *<mark style="background-color:#f8914d;">**Linux Filesystem structure**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -325,11 +325,11 @@ systemctl restart nginx
 
  
 
-*<mark style="background-color:#f8914d;">**Symlink (soft), Hardlink**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Symlink (soft), Hardlink**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
-***SymLink -***
+*<mark style="background-color:#f8d616;">**SymLink**<!-- {"backgroundCycleColor":"25"} --></mark> **-***
 
  
 
@@ -411,7 +411,7 @@ ls -li
 
  
 
-*<mark style="background-color:#f8914d;">**HardLink -**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**HardLink -**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 

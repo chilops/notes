@@ -1,7 +1,7 @@
 ﻿---
 title: 12Day_Shell Scripting
 uuid: 2451ac9e-0f53-11ef-af7b-a6f126245c9e
-version: 110
+version: 126
 created: '2024-05-11T10:28:43+05:30'
 tags:
   - shellscripting
@@ -24,7 +24,7 @@ tags:
 
 \
 
-*<mark style="background-color:#f8914d;">**GIT clone:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**GIT clone:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -96,7 +96,7 @@ git add . ; git commit -m "I am practicing GIT" ; git push origin master
 
  
 
-***Shell Scripting**:*
+# ***Shell Scripting**:*<!-- {"collapsed":true} -->
 
 *#!/bin/bash --> shebang     -->to check the syntax of our shell script, we need to give the location of bash*
 
@@ -198,7 +198,7 @@ sh 01.hello-world.sh
 
  
 
-*<mark style="background-color:#f8914d;">**Variables: **<!-- {"backgroundCycleColor":"24"} --></mark>we derive formula and finally we submit values…*
+# *<mark style="background-color:#f8914d;">**Variables: **<!-- {"backgroundCycleColor":"24"} --></mark>we derive formula and finally we submit values…*<!-- {"collapsed":true} -->
 
  
 
@@ -316,7 +316,7 @@ sh 03.variables.sh
 
  
 
-*<mark style="background-color:#f8914d;">**Arguments: Args**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Arguments: Args**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ![39f334e8-16cc-4f61-8f17-9e0056ce226a.png|786](https://images.amplenote.com/2451ac9e-0f53-11ef-af7b-a6f126245c9e/39f334e8-16cc-4f61-8f17-9e0056ce226a.png) [^29]
 
@@ -364,7 +364,7 @@ git pull
 
  
 
-***Data Types:***  
+# ***Data Types:***  <!-- {"collapsed":true} -->
 
 *int, float, string, double, long, char, boolean, array, arraylist, map, set*
 
@@ -422,7 +422,7 @@ git pull
 
  
 
-***Arrays: we can add multiple items in a single variables (ex… money,cards,coins adding into wallet)***
+# ***Arrays: we can add multiple items in a single variables (ex… money,cards,coins adding into wallet)***<!-- {"collapsed":true} -->
 
  
 

@@ -1,7 +1,7 @@
 ﻿---
 title: 18Day_Ansible
 uuid: 5c1aa2aa-0f69-11ef-9e6a-2e40d90dfe07
-version: 135
+version: 164
 created: '2024-05-11T13:07:45+05:30'
 tags:
   - ansible
@@ -27,7 +27,7 @@ tags:
 
 \
 
-<mark style="background-color:#f8914d;">**shell disadvantages**<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**shell disadvantages**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
  
 
@@ -45,7 +45,7 @@ tags:
 
 \
 
-<mark style="background-color:#f8914d;">**Ansible - configuration Management tool :**<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**Ansible -**<!-- {"backgroundCycleColor":"24"} --></mark>  <mark style="background-color:#fff;">**Its a configuration Management tool**<!-- {"backgroundCycleColor":"11"} --></mark><!-- {"collapsed":true} -->
 
  
 
@@ -137,7 +137,7 @@ Read the configuration --> it is easy to read the configuration of server throug
 
  
 
-<mark style="background-color:#f8914d;">Idempotence<!-- {"backgroundCycleColor":"24"} --></mark> - <mark style="background-color:#f8d616;">even you run your program infinite times, it should not create any damage<!-- {"backgroundCycleColor":"25"} --></mark>
+# <mark style="background-color:#f8914d;">Idempotence<!-- {"backgroundCycleColor":"24"} --></mark> - <mark style="background-color:#f8d616;">even you run your program infinite times, it should not create any damage<!-- {"backgroundCycleColor":"25"} --></mark><!-- {"collapsed":true} -->
 
  
 
@@ -261,7 +261,7 @@ HYD DTDC -- > deliver to home  --PUSH concept
 
 \
 
-<mark style="background-color:#f8914d;">**Ansible installation**:<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**Ansible installation**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
  
 
@@ -359,7 +359,7 @@ Now on node side Nginx service is running
 
  
 
-one by one module --> success/fail
+# one by one module --> success/fail<!-- {"collapsed":true} -->
 
  
 
@@ -385,7 +385,7 @@ DTO --> data transfer object
 
 \--------------------------------------
 
-XML --> Extensive Markup Language  (2008 older usage)
+# XML --> Extensive Markup Language  (2008 older usage)<!-- {"collapsed":true} -->
 
  
 
@@ -399,7 +399,7 @@ XML --> Extensive Markup Language  (2008 older usage)
 
  
 
-JSON --> Java script object notation
+# JSON --> Java script object notation<!-- {"collapsed":true} -->
 
 \----------------------------
 
@@ -415,7 +415,7 @@ JSON --> Java script object notation
 
  
 
-YAML
+# YAML<!-- {"collapsed":true} -->
 
 \----------------------------
 
@@ -433,7 +433,7 @@ YAML
 
  
 
-Anisble playbooks:
+# Ansible playbooks:<!-- {"collapsed":true} -->
 
 Create a repo:
 

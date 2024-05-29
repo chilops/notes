@@ -1,7 +1,7 @@
 ﻿---
 title: 6Day_Proj_Discussion
 uuid: e78beeda-0e8c-11ef-9be8-a6f126245c9e
-version: 123
+version: 131
 created: '2024-05-10T10:49:40+05:30'
 tags:
   - roboshop-project
@@ -17,7 +17,7 @@ tags:
 
 \
 
-*<mark style="background-color:#f8914d;">**Public & Private IP:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Public & Private IP:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -45,7 +45,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">**Monolithic Vs Microservices:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Monolithic Vs Microservices:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -113,7 +113,7 @@ tags:
 
  
 
-***Security Groups: ***
+# *<mark style="background-color:#f8914d;">**Security Groups: **<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ![c5d522ff-647a-4927-ab0d-ae6d9d4ab3ab.png|792.3333740234375](https://images.amplenote.com/e78beeda-0e8c-11ef-9be8-a6f126245c9e/c5d522ff-647a-4927-ab0d-ae6d9d4ab3ab.png) [^11]
 

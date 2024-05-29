@@ -1,7 +1,7 @@
 ﻿---
 title: 24Day_Ansible
 uuid: 1f222abc-0cf8-11ef-9bc9-2e40d90dfe07
-version: 542
+version: 548
 created: '2024-05-08T10:32:07+05:30'
 tags:
   - ansible
@@ -17,7 +17,7 @@ tags:
 
 \
 
-*<mark style="background-color:#f8914d;">**Ansible Vault (passwords)**<!-- {"backgroundCycleColor":"24"} --></mark><mark style="background-color:#fff;">**:**<!-- {"backgroundCycleColor":"11"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Ansible Vault (passwords)**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *It's a storage of secrets,*
 
@@ -254,7 +254,7 @@ ansible-playbook 1.pingplaybook.yaml --ask-vault-pass
 
 \
 
-<mark style="background-color:#f8914d;">Dynamic Inventory<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**Dynamic Inventory**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
 \
 

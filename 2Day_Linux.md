@@ -1,7 +1,7 @@
 ﻿---
 title: 2Day_Linux
 uuid: 568a17ea-0a27-11ef-a586-5658f55e0c13
-version: 209
+version: 262
 created: '2024-05-04T20:32:34+05:30'
 tags:
   - linux
@@ -41,6 +41,8 @@ tags:
 
 \
 
+# <mark style="background-color:#f8914d;">**List commands : LS**<!-- {"backgroundCycleColor":"24"} --></mark> <!-- {"collapsed":true} -->
+
 *#ls          --> list subdirectories*
 
 *#ls -l      -->lengthy format in alphabetic order*
@@ -65,7 +67,7 @@ tags:
 
 \
 
-*<mark style="background-color:#f8914d;">**CRUD**  --> every operation is curd. Means you create, read, update & delete any operations<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**CRUD**  --> every operation is curd. Means you create, read, update & delete any operations<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *--------------------*
 
@@ -81,7 +83,7 @@ tags:
 
 \
 
-*<mark style="background-color:#f8914d;">**Touch: **<!-- {"backgroundCycleColor":"24"} --></mark>creates a empty file*
+# *<mark style="background-color:#f8914d;">**Touch: **<!-- {"backgroundCycleColor":"24"} --></mark>creates a empty file*<!-- {"collapsed":true} -->
 
 ```
 touch file1 file2
@@ -91,7 +93,7 @@ touch file1 file2
 
  
 
-*<mark style="background-color:#f8914d;">**Mkdir:**<!-- {"backgroundCycleColor":"24"} --></mark> To create a directory*
+# *<mark style="background-color:#f8914d;">**Mkdir:**<!-- {"backgroundCycleColor":"24"} --></mark> To create a directory*<!-- {"collapsed":true} -->
 
 ```
 mkdir direct1
@@ -111,7 +113,7 @@ mkdir direct2 direct3
 
  
 
-*<mark style="background-color:#f8914d;">**CAT commands:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**CAT commands:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ```
 cat > file1       --> To write data in to a file (ctrl+d to save a file) Note: It always replaces the content
@@ -137,7 +139,7 @@ cat                   --> To view data in a file
 
 \
 
-*<mark style="background-color:#f8914d;">**Remove files: rm**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Remove files: rm**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ```
 rm file2
@@ -147,7 +149,7 @@ rm file2
 
  
 
-*<mark style="background-color:#f8914d;">**Remove Directory: rm**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Remove Directory: rm**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *It removes empty directory (**Note: we can't delete if any files or directories present in that folder**)* 
 
@@ -193,7 +195,7 @@ rm -r direct2   --> -r is recursive, it helps to delete all files/folders pres
 
  
 
-*<mark style="background-color:#f8914d;">**Copy commands: cp**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Copy commands: cp**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -231,7 +233,7 @@ cp -r satya/ madhu/
 
  
 
-*<mark style="background-color:#f8914d;">**Move command**: mv<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Move command**: mv<!-- {"backgroundCycleColor":"24"} --></mark> <mark style="background-color:#f3de6c;">Move\\cut\\rename command<!-- {"backgroundCycleColor":"14"} --></mark>*<!-- {"collapsed":true} -->
 
 *It moves all files & folders present in that folder.*
 
@@ -253,7 +255,7 @@ mv direct1/ devops/  
 
  
 
-*<mark style="background-color:#f8914d;">**Grep commands:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Grep commands:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ```
 grep games passwd
@@ -285,7 +287,7 @@ cat passwd | grep -i devops
 
 \
 
-<mark style="background-color:#f8914d;">**wget vs curl:**<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**wget vs curl:**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
  
 
@@ -303,7 +305,7 @@ cat passwd | grep -i devops
 
  
 
-*<mark style="background-color:#f8914d;">**curl**<!-- {"backgroundCycleColor":"24"} --></mark> --> downloads the text content directly on to terminal*
+# *<mark style="background-color:#f8914d;">**curl**<!-- {"backgroundCycleColor":"24"} --></mark> --> downloads the text content directly on to terminal*<!-- {"collapsed":true} -->
 
  
 
@@ -333,7 +335,7 @@ cat passwd | grep -i devops
 
  
 
-*<mark style="background-color:#f8914d;">**Echo:**<!-- {"backgroundCycleColor":"24"} --></mark> This command acts as a print..*
+# *<mark style="background-color:#f8914d;">**Echo:**<!-- {"backgroundCycleColor":"24"} --></mark> This command acts as a print..*<!-- {"collapsed":true} -->
 
  
 
@@ -349,7 +351,7 @@ cat passwd | grep -i devops
 
  
 
-*<mark style="background-color:#f8914d;">**CUT:**<!-- {"backgroundCycleColor":"24"} --></mark>  **We will use cut command to divide into fragments by using delimiter. This command uses in scripting mostly.***
+# *<mark style="background-color:#f8914d;">**CUT:**<!-- {"backgroundCycleColor":"24"} --></mark>  **We will use cut command to divide into fragments by using delimiter. This command uses in scripting mostly.***<!-- {"collapsed":true} -->
 
 \
 
@@ -387,7 +389,7 @@ cat passwd | grep -i devops
 
  
 
-*<mark style="background-color:#f8914d;">**AWK:  **<!-- {"backgroundCycleColor":"24"} --></mark>awk command is used to divide the data based on columns*
+# *<mark style="background-color:#f8914d;">**AWK:  **<!-- {"backgroundCycleColor":"24"} --></mark>awk command is used to divide the data based on columns*<!-- {"collapsed":true} -->
 
 ***same as cut command but a small difference I**n command.*
 
@@ -423,11 +425,11 @@ cat passwrd1
 
  
 
-*# cat passwd1 \| awk -F : '{print $1F}'*
+```
+cat passwd1 | awk -F : '{print $1F}'
+```
 
 ![ca8912c2-cb57-4044-a62e-aaaf0d9f8c34.png|666](https://images.amplenote.com/568a17ea-0a27-11ef-a586-5658f55e0c13/ca8912c2-cb57-4044-a62e-aaaf0d9f8c34.png) [^26]
-
- 
 
  
 
@@ -435,7 +437,7 @@ cat passwrd1
 
  
 
-*<mark style="background-color:#f8914d;">**Head & tail commands**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Head & tail commands**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *#head <file-name> --> shows first 10lines*
 
@@ -473,7 +475,7 @@ cat passwd1 | tail -n 3
 
  
 
-*<mark style="background-color:#f8914d;">**VIM editor:**<!-- {"backgroundCycleColor":"24"} --></mark> **It’s a visually improved editor.***
+# *<mark style="background-color:#f8914d;">**VIM editor:**<!-- {"backgroundCycleColor":"24"} --></mark> **It’s a visually improved editor.***<!-- {"collapsed":true} -->
 
  
 

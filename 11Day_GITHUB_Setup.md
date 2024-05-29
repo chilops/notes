@@ -1,7 +1,7 @@
 ﻿---
 title: 11Day_GITHUB_Setup
 uuid: 20fa8fc2-0f51-11ef-806e-2e40d90dfe07
-version: 133
+version: 139
 created: '2024-05-11T10:14:18+05:30'
 tags:
   - github
@@ -48,7 +48,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">**Manual process Negatives:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Manual process Negatives:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ![08f182df-08d8-4ff8-9fd6-30eb7ceedd5e.png|393](https://images.amplenote.com/20fa8fc2-0f51-11ef-806e-2e40d90dfe07/08f182df-08d8-4ff8-9fd6-30eb7ceedd5e.png) [^2]
 
@@ -56,7 +56,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">Scripting basics<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Scripting basics**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ![ca3aaf3d-43c5-4e84-921c-2cb5d59f02b8.png|538](https://images.amplenote.com/20fa8fc2-0f51-11ef-806e-2e40d90dfe07/ca3aaf3d-43c5-4e84-921c-2cb5d59f02b8.png) [^3]
 
@@ -78,7 +78,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">**GIT - Global Information Tracking System**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**GIT - Global Information Tracking System**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -102,7 +102,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">**Signup/creating a account in GIT**:<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Signup/creating a account in GIT**:<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ![e4ec7f1c-a0dd-4993-b6a4-c3e55fa47976.png|811.3333740234375](https://images.amplenote.com/20fa8fc2-0f51-11ef-806e-2e40d90dfe07/e4ec7f1c-a0dd-4993-b6a4-c3e55fa47976.png) [^9]
 
@@ -144,7 +144,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">**GIT Authentication:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**GIT Authentication:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -424,7 +424,7 @@ git push origin master
 
 \
 
-*<mark style="background-color:#f8914d;">Shell scripting:<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">Shell scripting:<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *Creating a repository for shell scripts*
 
@@ -478,7 +478,7 @@ git branch -M master
 
  
 
-*Now install Visual studio code - it's an IDE (Integrated development Environment)*
+# *Now install Visual studio code - it's an IDE (Integrated development Environment)*<!-- {"collapsed":true} -->
 
 ![c50513cd-5b3a-4a52-9270-69e546c6bcbd.png|865.3333740234375](https://images.amplenote.com/20fa8fc2-0f51-11ef-806e-2e40d90dfe07/c50513cd-5b3a-4a52-9270-69e546c6bcbd.png) [^49]
 

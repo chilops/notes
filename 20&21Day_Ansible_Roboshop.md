@@ -1,7 +1,7 @@
 ﻿---
 title: 20&21Day_Ansible_Roboshop
 uuid: 5fdfcca0-0f76-11ef-b475-a6f126245c9e
-version: 318
+version: 349
 created: '2024-05-11T14:40:55+05:30'
 tags:
   - ansible-roboshop
@@ -38,7 +38,7 @@ tags:
 
 \
 
-\#sudo yum install ansible -y
+# #sudo yum install ansible -y<!-- {"collapsed":true} -->
 
  
 
@@ -48,7 +48,7 @@ tags:
 
  
 
-**Creating instance using Roboshop-shell script ( for time being)**:
+# <mark style="background-color:#f8914d;">**Creating instance using Roboshop-shell script ( for time being)**<!-- {"backgroundCycleColor":"24"} --></mark>:<!-- {"collapsed":true} -->
 
  
 
@@ -113,7 +113,7 @@ Creating a new repository (roboshop-ansible)
 
  
 
-<mark style="background-color:#f8d616;">**Initializing git**:<!-- {"backgroundCycleColor":"25"} --></mark>
+# <mark style="background-color:#f8914d;">**Initializing git**:<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
 ```
 cd /e/awsdevops/Repos/roboshop-ansible/
@@ -130,7 +130,7 @@ git remote add origin git@github.com:chilops/roboshop-ansible.git
 
  
 
-<mark style="background-color:#f8914d;">**Roboshop using Ansible**:<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**Roboshop using Ansible**: - Inventory<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
  
 
@@ -142,7 +142,7 @@ Inventory.ini
 
  
 
-**MongoDB installation**:
+# <mark style="background-color:#f8914d;">**MongoDB installation**:<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
  
 
@@ -228,7 +228,7 @@ netstat -lntp
 
  
 
-<mark style="background-color:#f8914d;">**Catalogue installation**:<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**Catalogue installation**:<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
 \
 
@@ -371,7 +371,7 @@ Now count is 11
 
  
 
-<mark style="background-color:#f8914d;">**Web Installation**:<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**Web Installation**:<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
 YAML code : web
 
@@ -483,7 +483,7 @@ sudo systemctl status nginx              --> nginx service check
 
  
 
-<mark style="background-color:#f8914d;">**Reddis  install & configure** :<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**Reddis  install & configure** :<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
  
 
@@ -565,7 +565,7 @@ netstat -lntp    --> to check if redis is running or not
 
  
 
-<mark style="background-color:#f8914d;">**User install & configure**<!-- {"backgroundCycleColor":"24"} --></mark> - Similar to catalogue
+# <mark style="background-color:#f8914d;">**User install & configure**<!-- {"backgroundCycleColor":"24"} --></mark> - Similar to catalogue<!-- {"collapsed":true} -->
 
 ![e4bf3d23-8dfc-4844-8c5c-fca51bfb0b0f.png|827.3333740234375](https://images.amplenote.com/5fdfcca0-0f76-11ef-b475-a6f126245c9e/e4bf3d23-8dfc-4844-8c5c-fca51bfb0b0f.png) [^40]
 
@@ -673,7 +673,7 @@ Checking if user application is working or not
 
  
 
-<mark style="background-color:#f8914d;">**Cart install & configure**<!-- {"backgroundCycleColor":"24"} --></mark> - Similar to catalogue
+# <mark style="background-color:#f8914d;">**Cart install & configure**<!-- {"backgroundCycleColor":"24"} --></mark> - Similar to catalogue<!-- {"collapsed":true} -->
 
  
 
@@ -765,7 +765,7 @@ git status
 
  
 
-<mark style="background-color:#f8914d;">**MySQL install & configure**<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**MySQL install & configure**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
 MySql YAML code
 
@@ -819,7 +819,7 @@ netstat -lntp
 
  
 
-<mark style="background-color:#f8914d;">**Shipping install & configure**:<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**Shipping install & configure**:<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
  
 
@@ -961,7 +961,7 @@ mysql -h mysql.chowdarychilukuri.in -uroot -pRoboShop@1 -sN -e "SELECT COUNT(*) 
 
  
 
-<mark style="background-color:#f8914d;">**Payment install & configure**<!-- {"backgroundCycleColor":"24"} --></mark>: <mark style="background-color:#f8d616;">rabbitMQ, payment<!-- {"backgroundCycleColor":"25"} --></mark>
+# <mark style="background-color:#f8914d;">**Payment install & configure**<!-- {"backgroundCycleColor":"24"} --></mark>: <mark style="background-color:#f8d616;">rabbitMQ, payment<!-- {"backgroundCycleColor":"25"} --></mark><!-- {"collapsed":true} -->
 
 \
 
@@ -1075,7 +1075,7 @@ ansible-playbook -i inventory.ini -e ansible_user=centos -e ansible_password=Dev
 
  
 
-<mark style="background-color:#f8914d;">**Roles  --> Functions (In Ansible we call them as Roles)**<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**Roles  --> Functions (In Ansible we call them as Roles)**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
 DRY -- > don't repeat yourself  (to Avoid duplicates like same work doing multiple times creating directories etc)
 

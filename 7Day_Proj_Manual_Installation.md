@@ -1,7 +1,7 @@
 ﻿---
 title: 7Day_Proj_Manual_Installation
 uuid: 8381b170-0e8e-11ef-9be8-a6f126245c9e
-version: 401
+version: 447
 created: '2024-05-10T11:01:11+05:30'
 tags:
   - roboshop-project
@@ -16,7 +16,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">**Configure Roboshop manually:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Configure Roboshop manually:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *We have 3 tiers*
 
@@ -60,7 +60,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">CRUD over Database<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**CRUD over Database**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *--------------------------*
 
@@ -78,11 +78,11 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">**Manual project Installation:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Manual project Installation:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
-***Web server - t2.micro instance***
+*<mark style="background-color:#f8d616;">**Web server**<!-- {"backgroundCycleColor":"25"} --></mark> **- t2.micro instance***
 
 \
 
@@ -98,7 +98,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8d616;">**Creating an WEB Instance:**<!-- {"backgroundCycleColor":"25"} --></mark>*
+# *<mark style="background-color:#f8d616;">**Creating an WEB Instance:**<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -184,7 +184,7 @@ tags:
 
  
 
-***Installing NGINX: on web server***
+# ***Installing NGINX: on web server***<!-- {"collapsed":true} -->
 
  
 
@@ -368,7 +368,7 @@ ls -l
 
  
 
-*<mark style="background-color:#f8914d;">**Create Nginx Reverse Proxy Configuration.**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Create Nginx Reverse Proxy Configuration.**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *Forward proxy vs reverse proxy*
 
@@ -410,7 +410,7 @@ ls -l
 
  
 
-*<mark style="background-color:#f8d616;">**Forward proxy**<!-- {"backgroundCycleColor":"25"} --></mark>*
+# *<mark style="background-color:#f8d616;">**Forward proxy**<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"collapsed":true} -->
 
 ![d893dd0f-412e-45fd-b3fa-0ebb4fe0f9ec.png|697](https://images.amplenote.com/8381b170-0e8e-11ef-9be8-a6f126245c9e/d893dd0f-412e-45fd-b3fa-0ebb4fe0f9ec.png) [^29]
 
@@ -422,7 +422,7 @@ ls -l
 
  
 
-*<mark style="background-color:#f8914d;">**Reverse proxy**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Reverse proxy**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ![080d0072-3394-4593-9e14-cdcbd37247a1.png|808.3333740234375](https://images.amplenote.com/8381b170-0e8e-11ef-9be8-a6f126245c9e/080d0072-3394-4593-9e14-cdcbd37247a1.png) [^31]
 
@@ -514,7 +514,7 @@ systemctl restart nginx
 
  
 
-*<mark style="background-color:#f8d616;">HTTP status<!-- {"backgroundCycleColor":"25"} --></mark>*
+# *<mark style="background-color:#f8d616;">HTTP status<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"collapsed":true} -->
 
 *--------------------*
 
@@ -538,7 +538,7 @@ systemctl restart nginx
 
  
 
-*<mark style="background-color:#f8d616;">**Caching -> main purpose is load balancing & server anonymous**<!-- {"backgroundCycleColor":"25"} --></mark>*
+# *<mark style="background-color:#f8d616;">**Caching -> main purpose is load balancing & server anonymous**<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"collapsed":true} -->
 
 *--------------*
 
@@ -558,7 +558,7 @@ systemctl restart nginx
 
  
 
-*<mark style="background-color:#f8914d;">**Configuring MongoDB server:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Configuring MongoDB server:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -700,7 +700,7 @@ netstat -lntp                            --> now App 
 
  
 
-*<mark style="background-color:#f8914d;">**Launching & configuring Catalogue server:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Launching & configuring Catalogue server:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *Launch Catalogue instance: --> centos-8-DevOps-Practice (AMI)*
 

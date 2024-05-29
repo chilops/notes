@@ -1,7 +1,7 @@
 ﻿---
 title: 13Day_shell Scripting
 uuid: ab5d61fa-0f54-11ef-9e6a-2e40d90dfe07
-version: 70
+version: 85
 created: '2024-05-11T10:39:39+05:30'
 tags:
   - shellscripting
@@ -24,7 +24,7 @@ tags:
 
  
 
-<mark style="background-color:#f8914d;">**Conditions:**<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**Conditions:**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
 ![311a6068-c196-4217-819c-494be3d4c0a7.png|495](https://images.amplenote.com/ab5d61fa-0f54-11ef-9e6a-2e40d90dfe07/311a6068-c196-4217-819c-494be3d4c0a7.png) [^1]
 
@@ -62,7 +62,7 @@ Git pull
 
  
 
-**Install MySQL through shell script**
+# **Install MySQL through shell script**<!-- {"collapsed":true} -->
 
 \------------------------------
 
@@ -134,7 +134,7 @@ Git pull
 
  
 
-<mark style="background-color:#f8914d;">**Functions **<!-- {"backgroundCycleColor":"24"} --></mark>--> code that is repeated again, you can keep in function and call it whenever you want....
+# <mark style="background-color:#f8914d;">**Functions **<!-- {"backgroundCycleColor":"24"} --></mark>--> code that is repeated again, you can keep in function and call it whenever you want....<!-- {"collapsed":true} -->
 
  
 
@@ -158,7 +158,7 @@ Git pull
 
  
 
-<mark style="background-color:#f8914d;">**Redirections**<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**Redirections**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
  
 
@@ -256,7 +256,7 @@ git pull
 
  
 
-**Colours in shell scripts:**
+# **Colors in shell scripts:**<!-- {"collapsed":true} -->
 
  
 
@@ -334,7 +334,7 @@ git pull
 
  
 
-### <mark style="background-color:#f8914d;">**Loops:**<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**Loops:**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
 ![cd372444-f730-44a1-9ccd-f9fc5cf6e8ed.png|390](https://images.amplenote.com/ab5d61fa-0f54-11ef-9e6a-2e40d90dfe07/cd372444-f730-44a1-9ccd-f9fc5cf6e8ed.png) [^15]
 

@@ -1,7 +1,7 @@
 ﻿---
 title: 1Day_Linux
 uuid: eef7cc5c-09fa-11ef-8085-ae87eb62d412
-version: 262
+version: 310
 created: '2024-05-04T15:14:42+05:30'
 tags:
   - linux
@@ -29,13 +29,13 @@ tags:
 
 \
 
-***Topic_1:** Download it from link* [*Git - Downloads (git-scm.com)*](https://git-scm.com/downloads) *& install.*
+# *<mark style="background-color:#f8914d;">**Download it from link**<!-- {"backgroundCycleColor":"24"} --></mark>* [*<mark style="background-color:#f8914d;">**Git - Downloads (git-scm.com)**<!-- {"backgroundCycleColor":"24"} --></mark>*](https://git-scm.com/downloads) *<mark style="background-color:#f8914d;">**& install.**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ![f24d54c0-d103-41a7-b667-e0d55be1d08d.png|790.3333740234375](https://images.amplenote.com/eef7cc5c-09fa-11ef-8085-ae87eb62d412/f24d54c0-d103-41a7-b667-e0d55be1d08d.png)
 
 \
 
-***Topic_2:***
+# *<mark style="background-color:#f8914d;">**SSH Public & private Key Generation**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ![8f7e697f-71f0-4475-8070-b9b067ecb74f.png|377](https://images.amplenote.com/eef7cc5c-09fa-11ef-8085-ae87eb62d412/8f7e697f-71f0-4475-8070-b9b067ecb74f.png)
 
@@ -89,7 +89,7 @@ ssh-keygen -t rsa -f keypair1
 
 \
 
-**Topic_3:**
+# *<mark style="background-color:#f8914d;">**Create EC2 instance & connecting with public & private key, Importing a key pair in AWS, Creating a security group in AWS.**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *\*Cheapest region --> us-east-1 (N.Virginia) --> somewhat slow than Mumbai --> negligible*
 
@@ -128,10 +128,6 @@ ssh-keygen -t rsa -f keypair1
 \
 
 <mark style="background-color:#f3de6c;">0.0.0.0/0 --> representation of internet / public<!-- {"backgroundCycleColor":"14"} --></mark>
-
-\
-
-\
 
  
 
@@ -183,6 +179,8 @@ Private keypair path is very important - **Here in this case private keypair is 
 
 \
 
+# <mark style="background-color:#f8914d;">**SUDO**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
+
 **Commands:**
 
 *$ -> Normal user*
@@ -201,6 +199,8 @@ sudo su -
 
 \
 
+# <mark style="background-color:#f8914d;">**PWD**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
+
 ```
 pwd     --> present working directory
 ```
@@ -208,6 +208,8 @@ pwd     --> present working directory
 ![](https://images.amplenote.com/eef7cc5c-09fa-11ef-8085-ae87eb62d412/29bfafe2-be31-4303-b7d4-4051327002f0.png)
 
 \
+
+# <mark style="background-color:#f8914d;">**UNAME**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
 \#uname   --> gives you kernel name
 
@@ -227,11 +229,15 @@ uname -a   
 
 \
 
+# <mark style="background-color:#f8914d;">**HELP or MAN**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
+
 *<mark style="background-color:#f3de6c;">#help or man commands<!-- {"backgroundCycleColor":"14"} --></mark>*
 
 ![1813e2d7-9797-4a48-80be-562bda56409b.png|654](https://images.amplenote.com/eef7cc5c-09fa-11ef-8085-ae87eb62d412/1813e2d7-9797-4a48-80be-562bda56409b.png)
 
 \
+
+# <mark style="background-color:#f8914d;">**History**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
 *#history     --> gets previous history*
 

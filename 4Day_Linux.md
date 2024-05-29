@@ -1,7 +1,7 @@
 ﻿---
 title: 4Day_Linux
 uuid: 956743c8-0e84-11ef-9be8-a6f126245c9e
-version: 214
+version: 240
 created: '2024-05-10T09:50:06+05:30'
 tags:
   - linux
@@ -10,6 +10,8 @@ tags:
 ***Topics:***
 
 1. *<mark style="background-color:#f8d616;">Service Management - **0 to 65535 ports**<!-- {"backgroundCycleColor":"25"} --></mark>*
+
+1. *<mark style="background-color:#f8914d;">**Installing nginx to check port is communicating or not.**<!-- {"backgroundCycleColor":"24"} --></mark>*
 
 1. *<mark style="background-color:#f8d616;">Network Management  - **netstat**<!-- {"backgroundCycleColor":"25"} --></mark>*
 
@@ -29,7 +31,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">**Service Management: **<!-- {"backgroundCycleColor":"24"} --></mark> 0 to 65535 ports available.*
+# *<mark style="background-color:#f8914d;">**Service Management: **<!-- {"backgroundCycleColor":"24"} --></mark> 0 to 65535 ports available.*<!-- {"collapsed":true} -->
 
 ![33de7e0c-c67d-4d0a-86cb-f8adf2f32297.png|640](https://images.amplenote.com/956743c8-0e84-11ef-9be8-a6f126245c9e/33de7e0c-c67d-4d0a-86cb-f8adf2f32297.png) [^1]
 
@@ -91,7 +93,7 @@ ps -ef | grep -i ssh    
 
  
 
-*<mark style="background-color:#f8914d;">**Installing nginx to check port is communicating or not.**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Installing nginx to check port is communicating or not.**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ```
 sudo amazon-linux-extras install nginx1 -y
@@ -181,7 +183,7 @@ systemctl disable nginx
 
  
 
-*<mark style="background-color:#f8914d;">**Network Management**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Network Management -**<!-- {"backgroundCycleColor":"24"} --></mark><mark style="background-color:#f8d616;">**netstat**<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"collapsed":true} -->
 
  *Network statistics -To check if netstat is installed or not*
 
@@ -223,7 +225,7 @@ sudo netstat -lntp
 
  
 
-*<mark style="background-color:#f8914d;">**Troubleshooting process --> if system is hung**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Troubleshooting process --> if system is hung**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -279,7 +281,7 @@ free -m
 
  
 
-*<mark style="background-color:#f8914d;">**How to give access to Linux user**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**How to give access to Linux user -**<!-- {"backgroundCycleColor":"24"} --></mark> <mark style="background-color:#f3de6c;">User creating & group creation & adding users to groups<!-- {"backgroundCycleColor":"14"} --></mark>*<!-- {"collapsed":true} -->
 
 *Linux Admin --> full access to linux*
 
@@ -599,7 +601,7 @@ ls -l
 
  
 
-*<mark style="background-color:#f8914d;">**3 Tier Architecture**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**3 Tier Architecture**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ***Web applications** - Google sheets, docs, Ms office, bank applications*
 

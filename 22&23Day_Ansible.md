@@ -1,7 +1,7 @@
 ﻿---
 title: 22&23Day_Ansible
 uuid: 2f97211e-0b62-11ef-9fa6-5658f55e0c13
-version: 530
+version: 548
 created: '2024-05-06T10:06:20+05:30'
 tags:
   - ansible
@@ -25,7 +25,7 @@ tags:
 
 \
 
-***How to run in background and storing output***
+# *<mark style="background-color:#f8914d;">**How to run in background and storing output**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ```
 nohup ansible-playbook -i inventory.ini -e ansible_user=centos -e ansible_password=DevOps321 mysql.yaml & >> /dev/null
@@ -43,7 +43,7 @@ tail -f nohup.out
 
 \
 
-<mark style="background-color:#f8914d;">**Roles in Ansible :**<!-- {"backgroundCycleColor":"24"} --></mark>
+# <mark style="background-color:#f8914d;">**Roles in Ansible**<!-- {"backgroundCycleColor":"24"} --></mark><!-- {"collapsed":true} -->
 
 \
 
@@ -81,7 +81,7 @@ tail -f nohup.out
 
 \
 
-*<mark style="background-color:#f8914d;">MongoDB setup<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**MongoDB setup**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *mail.yaml code under roles/mongodb/tasks*
 
@@ -169,7 +169,7 @@ ansible-playbook -i inventory.ini -e ansible_user=centos -e ansible_password=Dev
 
 \
 
-*<mark style="background-color:#f8914d;">Catalogue setup :<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Catalogue setup**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 \
 
@@ -275,7 +275,7 @@ ansible-playbook -vvv -i inventory.ini -e ansible_user=centos -e ansible_passwor
 
 \
 
-*<mark style="background-color:#f8914d;">**ansible.cfg usage**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**ansible.cfg usage**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ![](https://images.amplenote.com/2f97211e-0b62-11ef-9fa6-5658f55e0c13/3bae3d30-8bcc-4a98-b3c3-b4032177a8ad.png)
 
@@ -297,7 +297,7 @@ ansible-playbook -e component=mongodb main.yaml
 
 \
 
-*Tags concept in Ansible*
+# *<mark style="background-color:#f8914d;">**Tags concept in Ansible**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 \
 

@@ -1,7 +1,7 @@
 ﻿---
 title: 27Day_Terraform
 uuid: 37c06422-1337-11ef-bbb0-c6370cefecaf
-version: 647
+version: 666
 created: '2024-05-16T09:18:54+05:30'
 tags:
   - terraform
@@ -27,7 +27,7 @@ tags:
 
 \
 
-# *<mark style="background-color:#f8914d;">**Locals**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Locals**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *Locals is just like variables, but it have some extra capabilities. you can keep functions and expressions inside locals and use them.*
 
@@ -81,7 +81,7 @@ terraform plan
 
 \
 
-*<mark style="background-color:#f8914d;">Data-sources:<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Data-sources**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 \
 
@@ -189,7 +189,7 @@ terraform plan
 
 \
 
-*<mark style="background-color:#f8914d;">**For each loop :**<!-- {"backgroundCycleColor":"24"} --></mark>  - <mark style="background-color:#f8914d;">useful to iterate maps<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**For each loop :**<!-- {"backgroundCycleColor":"24"} --></mark>  - <mark style="background-color:#f8914d;">useful to iterate maps<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 \
 
@@ -259,7 +259,7 @@ terraform destroy -auto-approve
 
 \
 
-*<mark style="background-color:#f8914d;">**Dynamic block(loop)-** not much use only for understanding<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Dynamic block(loop)-** not much use only for understanding<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 \
 
@@ -311,7 +311,7 @@ terraform apply -auto-approve
 
 \
 
-*<mark style="background-color:#f8914d;">**Terraform state & remote state**<!-- {"backgroundCycleColor":"24"} --></mark>**- <mark style="background-color:#f3de6c;">An IMP concept<!-- {"backgroundCycleColor":"14"} --></mark>***
+# *<mark style="background-color:#f8914d;">**Terraform state & remote state**<!-- {"backgroundCycleColor":"24"} --></mark>**- <mark style="background-color:#f3de6c;">An IMP concept<!-- {"backgroundCycleColor":"14"} --></mark>***<!-- {"collapsed":true} -->
 
 \
 

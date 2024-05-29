@@ -1,7 +1,7 @@
 ﻿---
 title: 3Day_Linux
 uuid: 2a20131c-0e82-11ef-9be8-a6f126245c9e
-version: 216
+version: 251
 created: '2024-05-10T09:32:47+05:30'
 tags:
   - linux
@@ -45,7 +45,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">**Permissions:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Permissions:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *permissions*
 
@@ -97,7 +97,7 @@ ls -l
 
  
 
-*<mark style="background-color:#f8914d;">**Chmod:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Chmod:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ```
 chmod u+x file1
@@ -167,7 +167,7 @@ chmod 740 example.txt
 
  
 
-*<mark style="background-color:#f8914d;">**User management:**<!-- {"backgroundCycleColor":"24"} --></mark> create user, set password, adding new user*
+# *<mark style="background-color:#f8914d;">**User management: **<!-- {"backgroundCycleColor":"24"} --></mark><mark style="background-color:#f3de6c;">create user, set password, adding new user<!-- {"backgroundCycleColor":"14"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -231,7 +231,7 @@ getent group | grep -i satya
 
  
 
-*<mark style="background-color:#f8914d;">**Enabling password authentication:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Enabling password authentication:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *If you want user to login using putty, we need to change below entries "PasswordAuthentication no" to "PasswordAuthentication yes" under **/etc/ssh/sshd_config***
 
@@ -283,7 +283,7 @@ systemctl restart sshd --> to restart sshd services
 
  
 
-*<mark style="background-color:#f8914d;">**Group creation:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Group creation:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *Syn: groupadd <group-name>*
 
@@ -305,7 +305,7 @@ getent group | grep -I devops
 
  
 
-*<mark style="background-color:#f8914d;">**Assigning a new group(devops) to user satya**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Assigning a new group(devops) to user satya**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *#every user will have a primary group and secondary group*
 
@@ -355,7 +355,7 @@ ls -l
 
  
 
-*<mark style="background-color:#f8914d;">**chown command**:<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**chown command**:<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *Syn: chown user:group <file-name>*
 
@@ -391,7 +391,7 @@ usermod -aG prod satya           --> G - for secondary group, g - for 
 
  
 
-***Removing a user from group***
+# *<mark style="background-color:#f8914d;">**Removing a user from group**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ***Syn:** gpasswd -d <user-name> <group-name>   --> -d stands for delete*
 
@@ -405,7 +405,7 @@ gpasswd -d satya prod
 
  
 
-***Group deletion:***
+# *<mark style="background-color:#f8914d;">**Group deletion:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ```
 groupdel devops
@@ -415,7 +415,7 @@ groupdel devops
 
  
 
-*<mark style="background-color:#f8914d;">**User deletion:**<!-- {"backgroundCycleColor":"24"} --></mark> user is leaving organization*
+# *<mark style="background-color:#f8914d;">**User deletion:**<!-- {"backgroundCycleColor":"24"} --></mark> user is leaving organization*<!-- {"collapsed":true} -->
 
 \
 
@@ -435,7 +435,7 @@ userdel sanjay
 
  
 
-*<mark style="background-color:#f8914d;">**Process Management:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Process Management:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *whatever we do in linux --> a process id will be created and reported back*
 
@@ -479,7 +479,7 @@ kill -9 <process id>     --> forcefully kills process (ex. When a police sto
 
  
 
-*<mark style="background-color:#f8914d;">**Package management:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Package management:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ***To install any package we should use only sudo access***
 
@@ -569,7 +569,7 @@ yum remove git -y
 
  
 
-*<mark style="background-color:#f8914d;">**Adding ssh private, public keys to new user:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Adding ssh private, public keys to new user:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *Madhu joined, how can you enable ssh access through private key*
 

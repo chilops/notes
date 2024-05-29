@@ -1,7 +1,7 @@
 ﻿---
 title: 9&10Day_Full_Manual_Installation_project
 uuid: 98b39b84-0e94-11ef-841c-a6f126245c9e
-version: 764
+version: 808
 created: '2024-05-10T11:44:44+05:30'
 tags:
   - roboshop-project-manual
@@ -38,6 +38,10 @@ tags:
 
  
 
+\
+
+# Few Details<!-- {"collapsed":true} -->
+
 ![96a3305e-2b9b-416e-a523-3a22eb18ab4f.png|411](https://images.amplenote.com/98b39b84-0e94-11ef-841c-a6f126245c9e/96a3305e-2b9b-416e-a523-3a22eb18ab4f.png) [^1]
 
  
@@ -58,7 +62,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">**Complete Manual project installation:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Complete Manual project installation:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -98,7 +102,9 @@ tags:
 
  
 
-1. *<mark style="background-color:#f3de6c;">**Launching 5 Instances**<!-- {"backgroundCycleColor":"14"} --></mark>*
+\
+
+# *<mark style="background-color:#f8914d;">**Launching 5 Instances**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -146,7 +152,7 @@ tags:
 
  
 
-*<mark style="background-color:#f8914d;">**Now configuring MongoDB Module**:<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Now configuring MongoDB Module**:<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ***MongoDB configure***
 
@@ -268,7 +274,7 @@ netstat -lntp                            --> now App 
 
  
 
-*<mark style="background-color:#f8914d;">**Creating A record for MongoDB, catalogue, web, cart, mysql, redis, shipping, user in AWS Route53  -- copy private IP & goto route 53**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Creating A record for MongoDB, catalogue, web, cart, mysql, redis, shipping, user in AWS Route53  -- copy private IP & goto route 53**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -366,7 +372,7 @@ netstat -lntp                            --> now App 
 
  
 
-*<mark style="background-color:#f8914d;">**Now configuring CATALOGUE Module:**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Now configuring CATALOGUE Module:**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 ![19803a1f-039d-4cbd-92e1-9e2da5ee8e0f.png|779.3333740234375](https://images.amplenote.com/98b39b84-0e94-11ef-841c-a6f126245c9e/19803a1f-039d-4cbd-92e1-9e2da5ee8e0f.png) [^33]
 
@@ -690,7 +696,7 @@ less /var/log/messages    --> these 2 commands is not working for me….
 
  
 
-*<mark style="background-color:#f8914d;">**Now configuring WEB Module**:<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Now configuring WEB Module**:<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -878,7 +884,7 @@ ls -l
 
  
 
-*<mark style="background-color:#f8d616;">**Create Nginx Reverse Proxy Configuration.**<!-- {"backgroundCycleColor":"25"} --></mark>*
+# *<mark style="background-color:#f8d616;">**Create Nginx Reverse Proxy Configuration.**<!-- {"backgroundCycleColor":"25"} --></mark>*<!-- {"collapsed":true} -->
 
 \
 
@@ -1018,7 +1024,7 @@ systemctl status nginx
 
  
 
-*<mark style="background-color:#f8914d;">**Now configuring REDIS Module**:<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Now configuring REDIS Module**:<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -1120,7 +1126,7 @@ netstat -lntp
 
  
 
-*<mark style="background-color:#f8914d;">**Now configuring USER Module**:<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Now configuring USER Module**:<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *User Application is dependent on MongoDB & Redis*
 
@@ -1432,7 +1438,7 @@ systemctl status nginx
 
  
 
-***Now configuring CART Module**:*
+# *<mark style="background-color:#f8914d;">**Now configuring CART Module**:<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *Cart Application is dependent on Catalogue & Redis*
 
@@ -2112,7 +2118,7 @@ systemctl restart nginx
 
 \
 
-<mark style="background-color:#f8914d;">**Launching & configuring RabitMQ server**:<!-- {"backgroundCycleColor":"24"} --></mark> 
+# <mark style="background-color:#f8914d;">**Launching & configuring RabitMQ server**:<!-- {"backgroundCycleColor":"24"} --></mark> <!-- {"collapsed":true} -->
 
  
 
@@ -2218,7 +2224,7 @@ rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
 
  
 
-<mark style="background-color:#f8914d;">**Launching & configuring PAYMENT server**:<!-- {"backgroundCycleColor":"24"} --></mark> 
+# <mark style="background-color:#f8914d;">**Launching & configuring PAYMENT server**:<!-- {"backgroundCycleColor":"24"} --></mark> <!-- {"collapsed":true} -->
 
  
 
@@ -2440,7 +2446,7 @@ Payment completed & order is successful
 
  
 
-<mark style="background-color:#f8914d;">**Launching & configuring DISPATCH server**:<!-- {"backgroundCycleColor":"24"} --></mark> 
+# <mark style="background-color:#f8914d;">**Launching & configuring DISPATCH server**:<!-- {"backgroundCycleColor":"24"} --></mark> <!-- {"collapsed":true} -->
 
  
 

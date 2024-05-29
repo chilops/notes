@@ -1,7 +1,7 @@
 ﻿---
 title: 16Day_Shell Scripting
 uuid: 8d658766-0f65-11ef-af7b-a6f126245c9e
-version: 160
+version: 170
 created: '2024-05-11T12:40:30+05:30'
 tags:
   - shell
@@ -26,7 +26,7 @@ tags:
 
 \
 
-*<mark style="background-color:#f8914d;">**Delete old log files**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Delete old log files**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -168,7 +168,7 @@ sh 15.Delete-old-log.sh        --> deletes .log files which are more than
 
 \
 
-*<mark style="background-color:#f8914d;">**IFS - Internal Field Separator  -- in detail discussion by using /etc/passwd file**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**IFS - Internal Field Separator  -- in detail discussion by using /etc/passwd file**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -214,7 +214,7 @@ sh 16.ifs.sh   
 
 \
 
-*<mark style="background-color:#f8914d;">**Check Disk usage & drop an email**<!-- {"backgroundCycleColor":"24"} --></mark>*
+# *<mark style="background-color:#f8914d;">**Check Disk usage & drop an email**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -284,7 +284,7 @@ df -hT | grep -v tmp              --> -v stands except that remaini
 
 \
 
- *<mark style="background-color:#f8914d;">**Installing and configuring Gmail setup in centos 8 :**<!-- {"backgroundCycleColor":"24"} --></mark>*
+#  *<mark style="background-color:#f8914d;">**Installing and configuring Gmail setup in centos 8 :**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
  
 
@@ -527,7 +527,7 @@ sh 17.disk-usage.sh
 
  
 
- *<mark style="background-color:#f8914d;">**Delete old log files**<!-- {"backgroundCycleColor":"24"} --></mark>*
+#  *<mark style="background-color:#f8914d;">**Delete old log files**<!-- {"backgroundCycleColor":"24"} --></mark>*<!-- {"collapsed":true} -->
 
 *---------------------*
 
