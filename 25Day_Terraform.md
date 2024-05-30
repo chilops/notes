@@ -1,7 +1,7 @@
 ﻿---
 title: 25Day_Terraform
 uuid: 0cc27282-10e5-11ef-8a05-2e40d90dfe07
-version: 976
+version: 1006
 created: '2024-05-13T10:25:41+05:30'
 tags:
   - terraform
@@ -33,7 +33,7 @@ tags:
 
 *shell scripting,* 
 
-*Ansible(ansible preffered for big/large environments)*
+*Ansible(ansible preferred for big/large environments)*
 
 \
 
@@ -49,7 +49,7 @@ tags:
 
 *Consistent Infrastructure - In both Dev, production we can use same code*  
 
-*<mark style="background-color:#f8d616;">Terraform<!-- {"backgroundCycleColor":"25"} --></mark> - same code will with all environments(DEV,QA,TESTING,PRODUCTION), So infrastructure is consistent across all environment's* 
+*<mark style="background-color:#f8d616;">Terraform<!-- {"backgroundCycleColor":"25"} --></mark> - same code can be used in all environments(DEV,QA,TESTING,PRODUCTION), So infrastructure is consistent across all environment's* 
 
 *Automated infra -- > CRUD*
 
@@ -81,7 +81,7 @@ tags:
 
 - *If you use terraform restoring the project to original state will be quick and easy.*
 
-- *Terraform is a hybrid cloud - AWS, GCP, Azure cloud etc* 
+- *Terraform is a hybrid cloud - AWS, GCP, Azure cloud etc.* 
 
 *Terraform providers*
 
@@ -572,7 +572,7 @@ terraform destroy -auto-approve
 
 \
 
-# *<mark style="background-color:#f8914d;">.gitignore file  <!-- {"backgroundCycleColor":"24"} --></mark>-- it will ignore .tfstate files and other files, else you can't push to github due to big size data.*<!-- {"collapsed":true} -->
+# *<mark style="background-color:#f8914d;">.gitignore file  <!-- {"backgroundCycleColor":"24"} --></mark>-- it will ignore .tfstate files and other files, else you can't push to GitHub due to big data size.*<!-- {"collapsed":true} -->
 
 \
 
